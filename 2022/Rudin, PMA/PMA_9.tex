@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,enumitem}
+
+\renewcommand\dim{\ensuremath{\text{dim }}}
+\newcommand\bs{\ensuremath{\boldsymbol}}
+\newcommand\be{\ensuremath{\boldsymbol e}}
+\newcommand\bx{\ensuremath{\boldsymbol x}}
+\newcommand\by{\ensuremath{\boldsymbol y}}
+\newcommand\bzero{\ensuremath{\boldsymbol 0}}
+
+\title{PMA 9 : Functions of Several Variables}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+
+\setcounter{section}8
+
+%%
+\section{Linear Transformations}
+
+%
+\subsection{Definition}
+\begin{enumerate}[label=(\alph*)]
+\item[(d)]
+\(\dim X=r\) if \(V\) contains an independent set of \(r\) vectors but contains no independent set of \(r+1\) vectors.
+\item[(e)]
+An independent subset of a vector space \(X\) which spans \(X\) is called a \emph{basis} of \(X\).
+\end{enumerate}
+
+%
+\subsection{Theorem}
+Let \(r\) be a positive integer.
+If a vector space \(X\) is spanned by  a set of \(r\) vectors, then \(\dim X\le r\).
+
+\begin{proof}
+If this is false, there is a vector space \(X\) which cotains an independent set \(Q=\{\by_1,\cdots,\by_{r+1}\}\) and which is spanned by a set \(S_0=\{\bx_1,\cdots,\bx_r\}\).
+
+\([i=0]\) :
+Since \(S_0\) spans \(X\), \(\by_1\) is in the span of \(S_0\).
+Hence,
+\[\by_1+b_1\bx_1+\cdots+b_r\bx_r=\bzero\]
+Since \(\by_1\neq\bzero\), there exists \(k_0\) such that \(b_{k_0}\neq0\)
+and \(\bx_{k_0}\) can be expressed as a linear combination of \(\{\bx_1,\cdots,\bx_r,\by_1\}\setminus\{\bx_{k_0}\}\).
+It follows that \(X\) is spanned by  \(\{\bx_1,\cdots,\bx_r,\by_1\}\setminus\{\bx_{k_0}\}\), which now we call \(S_1\) and rename the elements by writting \(S_1=\{\by_1,\bx_2,\cdots,\bx_r\}\).
+
+\([i=1]\) : Since \(S_1\) spans \(X\), \(\by_2\) is in the span of \(S_1\).
+Hence,
+\[a_1\by_1+\by_2+b_2\bx_2+\cdots+b_r\bx_r=\bzero\]
+Since \(\{\by_1,\by_2\}\) is independent, there exists \(k_1\) such that \(\bx_{k_1}\neq0\) and \(\bx_{k_1}\) can be expressed as a linear combination of \(\{\bx_2,\cdots,\bx_r,\by_1,\by_2\}\setminus\{\bx_{k_1}\}\).
+It follows that \(X\) is spanned by \(\{\bx_2,\cdots,\bx_r,\by_1,\by_2\}\setminus\{\bx_{k_1}\}\), which now we call \(S_2\) and rename the elements by wrtting \(S_2=\{\by_1,\by_2,\bx_3,\cdots,\bx_r\}\).
+
+\([i=r-1]\) :
+After the step \([i=r-2]\), we have \(S_{r-1}=\{\by_1,\cdots,\by_{r-1},\bx_r\}\) which spans \(X\).
+Since \(S_{r-1}\) spans \(X\), \(\by_r\)  is in the span of \(S_{r-1}\).
+Hence,
+\[a_1\by_1+\cdots+a_{r-1}\by_{r-1}+\by_r+b_r\bx_r=\bzero.\]
+Since \(\{\by_1,\cdots,\by_r\}\) is independent, \(b_r\neq0\) and \(\bx_r\) can be expressed as a linear combination of  \(\{\by_1,\cdots,\by_r\}\).
+It follows that \(X\) is spanned by \(\{\by_1,\cdots,\by_r\}\), which we call \(S_r\).
+
+Since the set \(Q=\{\by_1,\cdots,\by_{r+1}\}\) was independent, \(\by_{r+1}\) is outside of the span of \(S_r\) or the set \(X\).
+This contradiction proves the theorem.
+\end{proof}
+
+\subsection*{Corollary : \(\dim R^n=n\).}
+
+\begin{proof}
+\(R^n\) is spanned by the set \(E=\{\be_1,\cdots,\be_r\}\).
+The previous theorem says that \(\dim R^n\le n\).
+Moreover, \(E\) is independent set of \(n\) vectors, for which \(\dim R^n\ge n\).
+\end{proof}
+
+%
+\subsection{Theorem}
+Suppose \(X\) is a vectors space, and \(\dim X = n\).
+\begin{enumerate}[label=(\alph*)]
+\item
+A set \(E\) of \(n\) vectors in \(X\) spans \(X\) if and only if \(E\) is independent.
+\item
+\(X\) has a basis, and every basis consists of \(n\) vectors.
+\item
+If \(\{\by_1,\cdots,\by_r\}\) is an independent set in \(X\) such that \(1\le r\le n\), then \(X\) has a basis containing \(\{\by_1,\cdots,\by_r\}\).
+\end{enumerate}
+
+\begin{proof}
+(a)
+Suppose that \(E=\{\bx_1,\cdots,\bx_n\}\) is independent and that \(\by\in X\).
+The set \(E\cup\{\by\}\) is dependent since \(\dim X =n\).
+That is, \(a_1\bx_1+\cdots+a_n\bx_n+b\by=\bzero\) for a set of coefficients \(a_i\)'s and \(b\), all of which is not zero.
+Then, \(b\ne0\) owing to the independence of \(E\).
+Thus, \(\by\) is in the span of \(E\).
+Conversely, suppose that \(E\) is dependent.
+Then, one of its members can be removed (to constitute a set \(E_0\) of \(n-1\) vectors) without changing the span of \(E\).
+If \(E\) spans \(X\), then \(E_0\) spans \(X\) too.
+Then \(\dim X\le n-1\) by the previous theorem, which is a contradiction.
+Thus \(E\) spans \(X\).
+
+(b)
+Since \(\dim X = n\), \(X\) contains an independent set of \(n\) vectors.
+By (a), this set spans \(X\) and is a basis of \(X\).
+
+(c)
+Note first that any subset \(A\) of \(X\), consting of more than \(n\) elements, is dependent.
+For, if \(A\) were independent, then \(\dim X>n\) by \textbf{9.1.(d)}.
+
+Now, let \(\{\bx_1,\cdots,\bx_n\}\) be a basis for \(X\).
+The set \(\{\by_1,\cdots,\by_r,\bx_1,\cdots,\bx_n\}\) is a dependent set which spans \(X\).
+We can remove an element \(\bx_{k_i}\) for \(1\le i\le n-r\) from the set, without changing the span of \(X\), to construct \(\{\by_1,\cdots,\by_r\}\setminus\{x_{k_1},\cdots,x_{k_{n-r}}\}\).
+
+
+\end{proof}
+\end{document}
