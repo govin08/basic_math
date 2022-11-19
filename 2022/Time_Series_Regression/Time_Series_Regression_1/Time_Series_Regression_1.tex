@@ -1,11 +1,14 @@
 \documentclass{article}
-\usepackage{amsmath, amssymb, kotex}
+\usepackage{amsmath, amssymb, kotex, hyperref, graphicx, mdframed, setspace}
 \usepackage[a4paper, margin = 10mm]{geometry}
+\setstretch{1.5}
 \begin{document}
 \title{시계열 회귀분석(Time Series Regression - 2)}
 \author{강의 : 김성범 교수님}
 \date{\today}
 \maketitle
+
+이것은 \href{https://youtu.be/pxG4ZlHJ570}{Time Series Regression - Part 2} 강의에 대한 노트이다.
 
 %%
 \section{오차와 잔차(errors and residuals)}
@@ -38,7 +41,7 @@ e_i&=y_i-g(x_i)\label{error}\\
 그리고, 그러한 \(f\)들 중에서 관측값들을 가장 잘 반영하는 함수 \(\hat f\)를 찾는다.
 다시 말해, 전체적으로 \(y_i\)와 \(f(x_i)\)가 가장 비슷해지는 \(\beta_0,\beta_1,\cdots,\beta_k\)을 찾는데, 이때에 `비슷함'의 기준은 MSE 등을 통해 정할 수 있다.
 가장 비슷해지는 때의 \(\beta_0,\beta_1,\cdots,\beta_k\)는, hat을 붙여서 \(\hat\beta_0,\hat\beta_1,\cdots,\hat\beta_k\)로 표현한다.
-위의 표현대로 쓰면 \(\hat f =  F[\hat\beta_0,\hat\beta_1,\cdots,\hat\beta_n]\)이 될 것이다.
+위의 표현대로 쓰면 \(\hat f =  F[\hat\beta_0,\hat\beta_1,\cdots,\hat\beta_k]\)이 될 것이다.
 
 %%
 \section{여러가지 회귀모델}
@@ -78,7 +81,7 @@ MSE(\beta_0)
 %%%
 \subsection{선형회귀(linear trend, linear regression)}
 일차함수 \(f(x)=\beta_0+\beta_1x\)를 생각하자.\footnotemark
-\footnotetext{정확하게는 일차함수(linear function)라는 표현보다는 `affine 함수'라고 써야 더 맞을 것 같다.}
+\footnotetext{정확하게는 일차함수(linear function)라는 표현보다는 `affine 함수(affine function)'라고 써야 더 맞을 것 같다.}
 이것도 parametric function이다.
 이 함수는 \(\beta_0\)와 \(\beta_1\)에 의해 결정되는 함수이다.
 이번에도 \(\hat f\)를 구하기 위해 MSE가 최솟값이 되는 때를 찾는다.
@@ -137,7 +140,7 @@ n&\frac{n(n+1)}2\\
 \[MSE(\beta_0,\beta_1,\beta_2,\cdots,\beta_k)=\sum_{t=1}^n(y_t-\beta_0-\beta_1x-\beta_2x^2-\cdots-\beta_kx^k)^2\]
 이고, 똑같은 작업을 통해 \(\hat f(x)=\hat \beta_0+\hat \beta_1x+\hat \beta_2x^2+\cdots+\hat \beta_kx^k\)를 계산할 수 있다.
 
-이와같은 방식으로 \(\hat f\)를 계산하는 방식을 최소제곱법(최소자승법, least square method, least square estimation)이라고 한다.
+\textbf{2.1 ~ 2.4}에서와 같이, \(\hat f\)를 계산하는 방식을 최소제곱법(최소자승법, least square method, least square estimation, the method of least square)이라고 한다.
 
 %%
 \section{자기상관성(autocorrelation)}
@@ -156,43 +159,254 @@ n&\frac{n(n+1)}2\\
 \subsection{공분산(covariance)}
 두 확률변수 \(X\), \(Y\)에 대하여, \(X\)와 \(Y\)의 공분산(correlation) \(\text{Cov}(X,Y)\)는  다음과 같이 정의된다.
 \begin{equation}
-\text{Cov}(X,Y)=\mathbb E((X-\mathbb E(X))(Y-\mathbb E(Y)))
+\text{Cov}(X,Y)=\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]
 \end{equation}
 \(\mathbb E\)는 linear operator이므로
 \begin{align*}
 \text{Cov}(X,Y)
-&=\mathbb E((X-\mathbb E(X))(Y-\mathbb E(Y)))\\
-&=\mathbb E((X-\mu)(Y-\nu))\\
-&=\mathbb E(XY)-\mu\mathbb E(Y)-\nu\mathbb E(X)+\mathbb E(\mu\nu)\\
-&=\mathbb E(XY)-\mu\nu-\mu\nu+\mu\nu\\
-&=\mathbb E(XY)-\mathbb E(X)\mathbb E(Y)
+&=\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]\\
+&=\mathbb E[(X-\mu)(Y-\nu)]\\
+&=\mathbb E[XY]-\mu\mathbb E[Y]-\nu\mathbb E[X]+\mathbb E[\mu\nu]\\
+&=\mathbb E[XY]-\mu\nu-\mu\nu+\mu\nu\\
+&=\mathbb E[XY]-\mathbb E[X]\mathbb E[Y]
 \end{align*}
 라고 쓸 수도 있다.
-만약 \(X\), \(Y\)가 독립이면, \(\mathbb E(XY)=\mathbb E(X)\mathbb E(Y)\)이므로, \(\text{Cov}(X,Y)=0\)이 된다.
+만약 \(X\), \(Y\)가 독립이면, \(\mathbb E(XY)=\mathbb E(X)\mathbb E(Y)\)이므로, \(\text{Cov}(X,Y)=0\)이 되고 그 역도 성립한다.
+
+관측치 \(\{(x_i, y_i):i=1,2,\cdots,N\}\)에 대한 공분산은
+\[\text{Cov}(X,Y)=\frac1{n-1}\sum_{t=1}^n(x_t-\mu)(y_i-\nu)\]
+으로 계산하면 되는 것 같다.
+공분산에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/qtaqvPAeEJY}{StatQuest:Covariance, Clearly Explained}에 가장 잘 되어 있는 것 같다.
 
 %%%
 \subsection{피어슨 상관계수(correlation)}
 두 확률변수 \(X\), \(Y\)에 대하여 \(X\), \(Y\)의 피어슨 상관계수는 
 \begin{equation}
-\text{Cor}(X,Y)=\frac{\mathbb E((X-\mathbb E(X))(Y-\mathbb E(Y)))}{\sigma(X)\sigma(Y)}
+\text{Cor}(X,Y)=\frac{\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]}{\sigma[X]\sigma[Y]}
 \end{equation}
 이다.
 \(\text{Cor}(X,Y)\)는 \(-1\)과 \(1\) 사이의 값을 가지는데 그것은 다음과 같은 Cauchy-Schwarz 부등식 \(|v|\cdot|w|\le|v\cdot w|\)으로 쉽게 증명된다.
 \footnote{\(X\), \(Y\)가 이산확률변수인 경우만 고려했는데, 연속확률변수인 경우에도 비슷하게 증명될 수 있을 것이다.}
 \begin{align*}
-\left|\mathbb E((X-\mathbb E(X))(Y-\mathbb E(Y)))\right|
+\bigg|\mathbb E\left[\left(X-\mathbb E[X]\right)\left(Y-\mathbb E[Y]\right)\right]\bigg|
 &=\frac1{n-1}\left|\sum_{t=1}^n(x_i-\mu)(y_i-\nu)\right|\\
 &=\frac1{n-1}\left|(x_1-\mu,\cdots,x_n-\mu)\cdot(y_1-\nu,\cdots,y_n-\nu)\right|\\
 &\le\frac1{n-1}\left|(x_1-\mu,\cdots,x_n-\mu)\right|\cdot\left|(y_1-\nu,\cdots,y_n-\nu)\right|\\
 &=\sigma(X)\sigma(Y)
 \end{align*}
+관측치 \(\{(x_i, y_i):i=1,2,\cdots,N\}\)에 대한 피어슨 상관계수는
+\[\text{Cor}(X,Y)
+=\frac{\frac1{n-1}\sum_{t=1}^n(x_t-\mu)(y_i-\nu)}{\sqrt{\frac1{n-1}\sum_{t=1}^n(x_t-\mu)^2}\sqrt{\frac1{n-1}\sum_{t=1}^n(x_t-\mu)^2}}
+=\frac{\sum_{t=1}^n(x_t-\mu)(y_i-\nu)}{\sqrt{\sum_{t=1}^n(x_t-\mu)^2}\sqrt{\sum_{t=1}^n(x_t-\mu)^2}}\]
+으로 계산하면 되는 것 같다.
+피어슨 상관계수에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/xZ_z8KWkhXE}{StatQuest:Pearson's Correlation, Clearly Explained}에 가장 잘 되어 있는 것 같다.
+관측치의 \(N\)개 점들이 모두 한 직선 위에 있으면, 피어슨 상관계수는 (기울기가 양수일 경우) 1이거나 (기울기가 음수일 경우) $-1$이다.
+
+%%%
+\subsection{자기상관성(autocorrelation)}
+시계열 데이터 \(\{x_t:t=1,2,\cdots, n\}\)는 길이가 \(n\)인 수열이라고 생각할 수 있다.
+이 시계열데이터를 shift 시켜서 \(\{x_t:t=2,3,\cdots, n+1\}\)를 만들면
+\[\{(x_t,x_{t+1}):t=1,2,\cdots,n-1\}\]
+는 하나의 `관측치'가 된다.
+이것에 대한 피어슨 상관계수를 (lag=1인) 자기상관성이라고 한다.
+\footnote{그런데 이런 자기상관성이 왜 나오는지 잘 모르겠(었)다.
+\textbf{3.1.}의 앞에서 설명한 것은 오차 \(e_t\)들 사이의 독립/종속성이었지 \(X\)와 \(X'\)의 독립/종속성은 아니었다.
+다시 생각해보면, 강의에서는 `일반적인' 자기상관성의 정의에 대해 설명하고 있지만, 오차 \(e_t\)에 대한 자기상관성은, 여기서 설명하는 자기상관성의 정의에 쉽게 적용할 수 있다. 강의의 27분 15초 부터 이에 대한 설명이 있다.
+
+우리가 관심있는 것은, error term에 대한 자기상관성이다.
+만약, error term의 자기상관성이 0이어서, 각 timestep마다의 error term \(e_t\)가 서로 독립적이면, 기존의 방법인 `다변수회귀'의 방법을 그대로 써도 되고, 만약 자기상관성이 0이 아니어서 \(e_t\)가 서로 종속적이라면, 다변수회귀가 아닌 다른 방법을 강구해야 한다.
+하지만, 실제 상황에서 오차 \(e_t\)는 계산할 수 없으므로, 대신 잔차 \(\epsilon_t\)를 고려한다. (the residuals are point estimates of the error terms.)
+그리고 잔차의 자기상관성을 계산함으로써, 오차가 자기상관성을 가지는 지의 여부를 판단하게 된다. (a residual plot against time can be used to detect the violence of the independence assumption.)}
+강의에서는, 관측치에서의 첫번째 성분을 \(X\), 뒤의 성분을 \(X'\)이라고 썼다.
+그러니까, 
+\begin{align*}
+X&=\{x_t:t=1,2,\cdots,n\}\\
+X'&=\{x_{t+1}:t=1,2,\cdots,n\}
+\end{align*}
+이라고 생각하자.
+그러면 자기상관성(\(\rho_1(X)\), autocorrelation of order 1)은\footnotemark
+\[\rho_1(X)=\text{Cor}(X,X')\]
+인 것이다.
+\footnotetext{autocorrelation을 표현하는 표기 방식은 책마다 문헌마다 다 다른 것 같다.
+여기에서는 영상의 29분 45초경에 나오기도 하고, 위키피디아에 쓰여져있기도 한 \(\rho\)(rho)를 사용했다.
+아래첨자로 1을 넣은 것은 order=1이라는 의미이고 여기에서의 order는 lag를 의미한다.
+lag=2이면 second order, lag=3이면 third order와 같이 쓴다고 강의에 설명되어 있다.}
+
+이게 뭔지 잘 와닿지가 않아서, 몇개의 예를 만들어보았다.
+\(n=6\)이고 \(X\)가 선형적으로 증가하는 경우를 생각해보았다.
+\begin{center}
+\begin{tabular}{c|ccccccc}
+$X$ &1&2&3&4&5&6&\\\hline
+$X'$& &1&2&3&4&5&6
+\end{tabular}
+\end{center}
+자기상관성을 계산하기 위해서는, 관측치
+\[\{(2,1),(3,2),(4,3),(5,4),(6,5)\}\]
+에 대한 피어슨 상관계수를 계산하면 된다. (lag=1)
+이 다섯 개의 점들은 한 직선 위에 있으므로 \(\text{Cor}(X,X')=1\)이 되어야 한다.
+실제 계산을 해보아도
+\begin{align*}
+\text{Cor}(X,X')
+&=\frac{(2-4)(1-3)+(3-4)(2-3)+(4-4)(3-3)+(5-4)(4-3)+(6-4)(5-3)}{\sqrt{(2-4)^2+(3-4)^2+(4-4)^2+(5-4)^2+(6-4)^2}\sqrt{(1-3)^2+(2-3)^2+(3-3)^2+(4-3)^2+(5-3)^2}}\\
+&=\frac{10}{\sqrt{10}\sqrt{10}}=1.
+\end{align*}
+이 된다.
+다시 말해서, 선형적인 시계열과 그것을 shift시킨 것은 1의 상관성을 가진다.
+
+이번에는 $n=6$이고 $X$가 quadratic하게 증가하는 경우를 생각해보았다.
+\begin{center}
+\begin{tabular}{c|ccccccc}
+$X$ &0&1&4&9&16&25&\\\hline
+$X'$& &0&1&4&9&16&25
+\end{tabular}
+\end{center}
+자기상관성을 계산하기 위해서는, 관측치
+\[\{(1,0),(4,1),(9,4),(16,9),(25,16)\}\]
+에 대한 피어슨 상관계수를 계산하면 된다.
+이 다섯 개의 점들은 양의 상관관계가 있기는 해도 한 직선 위에 있지는 않으므로 \(0<\text{Cor}(X,X')<1\)이면서 꽤 1에 가까운 값이 나올 것이다.
+실제 계산은, 아까보다 복잡하다.
+먼저 $X$와 $X'$의 표준편차에 해당하는 값을 계산하기 위해서 편차들을 적어보면 (\(\mu=11\), \(\nu=6\))
+\begin{center}
+\begin{tabular}{c|ccccccc}
+$X$ &0&1&4&9&16&25&\\\hline
+$X'$& &0&1&4&9&16&25\\\hline
+$X-\mu$&$\cdot$&-10&-7&-2&5&14&$\cdot$\\\hline
+$X'-\nu$&$\cdot$&-6&-5&-2&3&10&$\cdot$
+\end{tabular}
+\end{center}
+이다.
+표준편차에 해당하는 값을 계산하면
+\begin{align*}
+\sqrt{\sum_{t=1}^5(x_t-\mu)^2}
+&=\sqrt{(-10)^2+(-7)^2+(-2)^2+5^2+14^2}=\sqrt{374}\\
+\sqrt{\sum_{t=1}^5(x_{t-1}-\nu)^2}
+&=\sqrt{(-6)^2+(-5)^2+(-2)^2+3^2+10^2}=\sqrt{174}
+\end{align*}
+이다. 공분산에 해당하는 값을 계산하면
+\[\sum_{t=1}^5(x_t-\mu)(x_{t-1}-\nu)=(-10)(-6)+(-7)(-5)+(-2)(-2)+(5)(3)+(14)(10)=254.\]
+따라서, 자기상관성은
+\[\text{Cor}(X,X')=\frac{254}{\sqrt{374}\sqrt{174}}=0.9957\]
+와 같이 계산되고 autocorelation은 1에 거의 가까운 값을 가진다.
+\footnote{아무리 그렇다고 해도, 1에 너무 가까운 값이 구해진 것 같다.
+왜 그런지 잘 모르겠는데, 상대적으로 절댓값이 작은 0 ~ 1 정도에서 차이를 냈기 때문에 그런 걸까? 그렇지도 않을 것 같다.
+다른 예를 들어보고 싶기는 한데 계산이 더 복잡할 것 같아서 안하겠다.}
+
+아래는, 이걸 손으로 계산해본 것이다.
+4로 나눴어야 했는데 5로 나누었기 때문에 과정은 조금 틀렸다.
+하지만, 어차피 약분되기 때문에 결과적으로 autocorrelation을 계산하는 데에는 영향을 미치지는 않는다.
+
+\begin{center}
+\includegraphics[width=.6\textwidth]{autocorrelation-1}
+\end{center}
+
+다음과 같은 생각이 들었다.
+
+\begin{mdframed}
+(질문) 어떤 시계열 데이터가 autocorrelation=0을 만족할 수 있을까?
+\end{mdframed}
+
+위의 두 예에서는 $X$와 $X'$가 아주 강한 상관관계를 가지고 있었다.
+상관계수 값이 작아지려면 어떤 시계열이어야 할까?
+자기상관계수(autocorrelation)가 정확히 0이 되는 시계열이 존재할까?
+그러니까, 어떤 timestep에 대해서도, 그리고 어떤 lag에 대해서도 상관관계가 0이 되도록 하는 시계열이 존재할 수 있을까?
+구글에 아무리 검색을 해봐도 (e.g. ``not autocorrelated time series'') 이것에 대한 말이 없다.
+stackoverflow에 물어봐야 할지도 모르겠다.
+
+아래 그림과 같이 여러가지로 시도해봤는데, autocorrelation이 0이 되는 (lag=1) 시계열을 발견했다.
+
+\begin{center}
+\includegraphics[width=\textwidth]{autocorrelation-2}
+\end{center}
+
+맨 오른쪽 계산(예시 4)이다.
+이걸 다시 정리해보면 (\(n=8\), \(\mu=\nu=\frac12\))
+\begin{center}
+\begin{tabular}{c|cccccccccc}
+$X $&0&0&1&1&0&0&1&1&0&\\\hline
+$X'$& &0&0&1&1&0&0&1&1&0\\\hline
+$X-\mu$&$\cdot$&$-\frac12$&$\frac12$&$\frac12$&$-\frac12$&$-\frac12$&$\frac12$&$\frac12$&$-\frac12$&$\cdot$\\\hline
+$X'-\nu$&$\cdot$&$-\frac12$&$-\frac12$&$\frac12$&$\frac12$&$-\frac12$&$-\frac12$&$\frac12$&$\frac12$&$\cdot$
+\end{tabular}
+\end{center}
+이다.
+표준편차에 해당하는 값을 계산하면
+\begin{align*}
+\sqrt{\sum_{t=1}^8(x_t-\mu)^2}
+&=\sqrt{\frac14\times8}=\sqrt 2\\
+\sqrt{\sum_{t=1}^8(x_{t-1}-\nu)^2}
+&=\sqrt{\frac14\times8}=\sqrt 2
+\end{align*}
+이다. 공분산에 해당하는 값을 계산하면
+\[\sum_{t=1}^8(x_t-\mu)(x_{t-1}-\nu)=\frac14-\frac14+\frac14-\frac14+\frac14-\frac14+\frac14-\frac14=0.\]
+따라서,
+\[\text{Cor}(X,X')=\frac{0}{\sqrt2\sqrt2}=0\]
+와 같이 계산되고 autocorelation은 0이다.
+
+이것은 조금 더 쉽게 해석될 수도 있다.
+위 그림의 예시 1은, 좌표평면 상에 두 점 \((1,0)\), \((0,1)\)을 찍어 그 두 점에 대한 correlation을 계산하는 것이다.
+그러면 당연히, 두 점을 잇는 직선이 존재하고 그 기울기가 음수니까, correlation은 \(-1\)이 될 수밖에 없었다.
+마찬가지로, 예시 2는, 두 점 \((1,-1)\), \((-1,1)\)을 찍어 그 두 점에 대한 correlation을 계산하는 것이고, 이번에도 correlation은 \(-1\)이다.
+예시 3에서는 네 점 \((0,0)\), \((1,0)\), \((1,1)\), \((0,1)\)의 네 점에 대하여 correalation을 계산하는 것이라고 해석할 수 있는데,
+조금 더 정확하게는 4개의 점이라기 보다는, 11개의 점이고, \((0,0)\)은 4개, \((1,0)\)은 2개, \((0,1)\)는 1개, \((1,1)\)는 4개를 고려하는 것이다.
+다시 말해, 네 개의 점이기는 하지만 가중치가 부여된 네 개의 점이기 때문에, 이 네 개의 점에 대해서는 correlation이 0인 것이 아니다.
+\((0,0)\)과 \((1,1)\)에 가중치가 상대적으로 많이 들어간 셈이므로 correlation은 양수가 되는 것이 맞고, 실제로도 계산이 그렇게 나온다.
+마지막으로, 예시 4는 네 점 \((0,0)\), \((1,0)\), \((1,1)\), \((0,1)\)이 equally weighted된 것이라고 볼 수 있다.
+이렇게 찍힌 네 점에 대하여는 상관계수가 0이 되는 것이 당연하다.
+그래서, 실제 계산도 0이 되었다.
+
+그러면, 실제 강의에서 negative autocorrelation에 대한 내용이 얼추 설명이 된 것 같기도 하다.
+그 부분의 캡쳐를 떠오면
+\begin{center}
+\includegraphics[width=.4\textwidth]{negative_autocorrelation}
+\end{center}
+인데, 이런 패턴(alternating pattern)의 시계열을 예시 1과 예시 2에서 봤었고, autocorrelation이 $-1$이 된다는 걸 확인했었다.
+예시 1과 2에서처럼 일정한 진폭으로 진동하는 게 아니라, 진폭이 조금 변하면서 진동하는 예를 임의로 만들어보면
+\begin{center}
+\includegraphics[width=.6\textwidth]{autocorrelation-3}
+\end{center}
+처럼 만들 수도 있다.
+
+실제 강의에서 positive autocorrelation에 대해 설명한 내용에 관해서는 (아래 캡쳐)
+\begin{center}
+\includegraphics[width=.4\textwidth]{positive_autocorrelation}
+\end{center}
+예시를 적절하게 든 적이 없다.
+마치 사인함수나 코사인함수 같은 예를 들고 있는데 사인함수 같은건 계산하기가 좀 귀찮을 것 같..으니 간단한 예를 먼저 들면 (예시6)
+\begin{center}
+\includegraphics[width=.6\textwidth]{autocorrelation-4}
+\end{center}
+와 같이 된다.
+이건 예시 4와 예시 3을 조금 연장한 것이다.
+lag를 1로 고정한 상태에서, 예시 4에서는 alternating 주기가 4였고, 예시 3에서는 alternating 주기가 6이었다면 이번 예시 6에서는 alternating 주기가 8로 늘어났다.
+각각의 자기상관성은 예시 4에서 0, 예시 3에서 \(\frac{77}{165}\)쯤 되는 것 같더니 예시 6에서는 \(\frac23\)으로 증가했다.
+아마 alternating 주기를 더 늘려가면 자기상관성은 더 커질 것이다.
+이것은 강의에서 설명하고 있는, ``양수 이후에 양수가 나오고, 음수 이후에 음수가 나오는'' 경향을 말하는 것 같다.
+
+이번에는 강의 그림에서처럼 사인곡선과 조금 비슷하게 만들어보았다.
+\begin{center}
+\includegraphics[width=.6\textwidth]{autocorrelation-5}
+\end{center}
+이 때에도 positive autocorrelation이 계산된다.
 
 %%
-\section{}
+\section{Durbin-Watson Test}
+%%%
+\subsection{autocorrelation applied to the residual term}
+지금까지, 어떤 시계열 데이터에 대한 자기상관성(autocorrelation)에 대해 말했다.
+하지만, 3번 각주에서 말했듯이, 우리가 관심있는 것은 error term(오차, \(e_t\))의 자기상관성이고, 실제로는 error term을 알 수 없으니 대신에 residual term(잔차, \(\epsilon_t\))의 자기상관성을 다룬다.
+residual term들의 수열을 그냥 \(\epsilon\)이라고 하자.
+\[\epsilon=\{\epsilon_t:t=1,2,\cdots,n\}\]
+그리고 \(\epsilon\)을 한 timestep 민 것을 \(\epsilon'\)이라고 하자 (first order; lag=1)
+\[\epsilon'=\{\epsilon_{t+1}:t=1,2,\cdots,n\}.\]
+그러면, 여기에서 구해야 하는, residual term의 autocorrelation \(\rho_1(\epsilon)\)은  다음과 같이 표현된다.
+\begin{align*}
+\rho_1(\epsilon)
+&=\text{Cor}(\epsilon,\epsilon')\\
+&=\frac{\sum_{t=1}^n(\epsilon_t-\epsilon_{t+1})^2}{}
+\end{align*}
+
 %%
-\section{}
-%%
-\section{}
-%%
-\section{}
+\section{Increasing Seasonal Variations}
+
+
 \end{document}
