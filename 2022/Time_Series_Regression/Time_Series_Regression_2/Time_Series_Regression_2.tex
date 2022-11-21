@@ -4,7 +4,7 @@
 \setstretch{1.5}
 \begin{document}
 \title{시계열 회귀분석(Time Series Regression - 2)}
-\author{강의 : 김성범 교수님}
+\author{강의 : 김성범 교수님\\ 정리 :  김선중}
 \date{\today}
 \maketitle
 
@@ -51,7 +51,7 @@ e_i&=y_i-g(x_i)\label{error}\\
 (앞서 말했듯이) 회귀란, 관측값들 \(\{(x_i,y_i):i=1,2,\cdots,n\}\)로부터 \(x\)와 \(y\) 사이의 관계식을 \(y=\hat f(x)\)으로 추정해나가는 것이다.
 시계열 데이터를 다루는 만큼 index를 \(i\) 대신 \(t\)라고 쓰고, \(\hat f(x)\)를 추세(trend)를 뜻하는 $TR$이라는 기호로 고쳐 쓰면 식 \eqref{error}는 다음 식이 된다.
 \[y_t=TR_t+\epsilon_t.\]
-강의에서 위와 같은 식이 나오긴 했지만, 별로 마음에 들지 않으므로 다음 표현을 쓰는 것도 괜찮을 것 같다.
+이 표기방식은 강의에서 나온 방식인데, 그것보다는, 위의 설명과의 통일성을 위해 아래와 같이 쓰는 것도 괜찮을 것 같다.
 \[y_t=\hat f(x_t)+\epsilon_t.\]
 %\begin{quotation}
 %Time series \(y_t\) can be represented by an average level that changes over time according to the equation \(TR_t\) and by the error term.
@@ -79,6 +79,7 @@ MSE(\beta_0)
 \end{gather*}
 %\(y_t\)들의 평균을 간단히 \(\bar y\)라고 쓰면,
 즉, \(\hat\beta_0=\frac1n\sum_{t=1}^ny_t\)이고, \(\hat f(x)=\frac1n\sum_{t=1}^ny_t\)이다.
+강의에서는 상수회귀에 대한 예를 들고 있고, 더 나아가 point estimate와 confidence interval 같은 것도 이야기하고 있다.
 
 %%%
 \subsection{선형회귀(linear trend, linear regression)}
@@ -160,12 +161,14 @@ n&\sum x_t&\sum{x_t}^2\\
 일반적으로는 다변수에 대해서도 회귀(multivariate regression)를 진행할 수 있다.
 변수들을 \(x_1\), \(x_2\), \(\cdots\), \(x_k\)이라고 하면 parametric model \(f(x_1,x_2,\cdots,x_k)\)을 생각할 수 있다.
 가장 간단한 경우는 다변수 선형회귀(multivariate linear regression)일 것이고, 그것은 parametric model을
-\[(x_1,x_2,\cdots,x_k)=\beta_0+\beta_1x_1+\cdots+\beta_kx_k\]
+\[f(x_1,x_2,\cdots,x_k)=\beta_0+\beta_1x_1+\cdots+\beta_kx_k\]
 로 두는 것이다.
+이 때에도 마찬가지로 최소제곱법을 사용해서 \(\hat f\)를 계산할 수 있다.
 
 %%
 \section{자기상관성(autocorrelation)}
-회귀문제에서 각각의 오차(\(e_t\))들에 대하여 전제되어야 하는 몇가지 가정들이 있었다.
+회귀문제에서 각각의 오차(\(e_t\))들에 대하여 전제되어야 하는 몇가지 가정들이 있었다.\footnote{왜 이런 가정이 필요한지는 아직 이해하지 못했다.
+하지만 `아래의 두 가정을 따르도록 하는 \(f\)를 고려하겠다.' 정도로 생각해도 될 것 같다.}
 \begin{itemize}
 \item
 \(e_t\sim N(0,\sigma^2)\) : 오차는 평균이 0인 정규분포를 따른다.
@@ -198,13 +201,14 @@ n&\sum x_t&\sum{x_t}^2\\
 관측치 \(\{(x_t, y_t):t=1,2,\cdots,n\}\)에 대한 공분산은
 \[\text{Cov}(X,Y)=\frac1{n-1}\sum_{t=1}^n(x_t-\mu)(y_i-\nu)\]
 으로 계산하면 되는 것 같다.
-공분산에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/qtaqvPAeEJY}{StatQuest:Covariance, Clearly Explained}에 가장 잘 되어 있는 것 같다.
+당연한 말이지만 \(Y=X\)이면 공분산은 분산이 된다 ; \(\text{Cov}(X,X)=V(X)\).
+공분산에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/qtaqvPAeEJY}{StatQuest:Covariance, Clearly Explained}에 가장 친절하게 설명되어 있는 것 같다.
 
 %%%
 \subsection{피어슨 상관계수(correlation)}
 두 확률변수 \(X\), \(Y\)에 대하여 \(X\), \(Y\)의 피어슨 상관계수는 
 \begin{equation}\label{pearson1}
-\text{Cor}(X,Y)=\frac{\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]}{\sigma[X]\sigma[Y]}
+\text{Cor}(X,Y)=\frac{\text{Cov}(X,Y)}{\sigma[X]\sigma[Y]}=\frac{\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]}{\sigma[X]\sigma[Y]}
 \end{equation}
 이다.
 \(\text{Cor}(X,Y)\)는 \(-1\)과 \(1\) 사이의 값을 가지는데 그것은 Cauchy-Schwarz 부등식 \(|v|\cdot|w|\le|v\cdot w|\)으로 쉽게 증명된다.
@@ -223,18 +227,18 @@ n&\sum x_t&\sum{x_t}^2\\
 =\frac{\sum_{t=1}^n(x_t-\mu)(y_i-\nu)}{\sqrt{\sum_{t=1}^n(x_t-\mu)^2}\sqrt{\sum_{t=1}^n(x_t-\mu)^2}}
 \end{equation}
 으로 계산하면 되는 것 같다.
-피어슨 상관계수에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/xZ_z8KWkhXE}{StatQuest:Pearson's Correlation, Clearly Explained}에 가장 잘 되어 있는 것 같다.
+피어슨 상관계수에 대한 일반적인 설명과 여러가지 예제들은 \href{https://youtu.be/xZ_z8KWkhXE}{StatQuest:Pearson's Correlation, Clearly Explained}에 가장 친절하게 설명되어 있는 것 같다.
 관측치의 \(n\)개 점들이 모두 한 직선 위에 있으면, 피어슨 상관계수는 (기울기가 양수일 경우) 1이거나 (기울기가 음수일 경우) $-1$이다.
 
 %%%
 \subsection{자기상관성(autocorrelation)}
 시계열 데이터 \(X=\{x_t:t=1,2,\cdots, n\}\)는 길이가 \(n\)인 수열이라고 생각할 수 있다.
 이 시계열데이터를 timestep 1만큼 shift 시켜서 \(X'=\{x_t:t=2,3,\cdots, n+1\}\)를 만들자.
-\(X\)의 첫항과 \(X'\)의 마지막 항을 제외하면
+\(X\)의 첫항과 \(X'\)의 마지막 항을 제외하고, \(X\)와 \(X'\)의 항들을 대응시키면
 \[\{(x_t,x_{t+1}):t=1,2,\cdots,n-1\}\]
 는 하나의 `관측치'가 된다.
 이것에 대한 피어슨 상관계수를 자기상관성이라고 한다.
-\footnote{그런데 이런 자기상관성이 왜 나오는지 잘 모르겠(었)다.
+\footnote{그런데 \(X\)에 대한 자기상관성이 왜 나오는지 잘 모르겠(었)다.
 \textbf{3.1.}의 앞에서 설명한 것은 오차 \(e_t\)들 사이의 독립/종속성이었지 \(X\)와 \(X'\)의 독립/종속성은 아니었다.
 다시 생각해보면, 강의에서는 `일반적인' 자기상관성의 정의에 대해 설명하고 있지만, 오차 \(e_t\)에 대한 자기상관성은, 여기서 설명하는 자기상관성의 정의에 적용할 수 있다.
 강의의 27분 15초 부터 이에 대한 설명이 있다.
@@ -316,7 +320,7 @@ $X'-\nu$&$\cdot$&-6&-5&-2&3&10&$\cdot$
 \[\text{Cor}(X,X')=\frac{254}{\sqrt{374}\sqrt{174}}=0.9957\]
 와 같이 계산되고 autocorelation은 1에 거의 가까운 값을 가진다.
 \footnote{아무리 그렇다고 해도, 1에 너무 가까운 값이 구해진 것 같다.
-왜 그런지 잘 모르겠는데, 상대적으로 절댓값이 작은 0 ~ 1 정도에서 차이를 냈기 때문에 그런 걸까? 그렇지도 않을 것 같다.
+왜 그런지 잘 모르겠는데, 상대적으로 절댓값이 작은 0 \(\sim\) 1 정도에서 차이를 냈기 때문에 그런 걸까? 그렇지도 않을 것 같다.
 다른 예를 들어보고 싶기는 한데 계산이 더 복잡할 것 같아서 안하겠다.}
 
 아래는, 이걸 손으로 계산해본 것이다.
@@ -419,10 +423,17 @@ lag를 1로 고정한 상태에서, 예시 1에서는 alternating 주기가 2였
 
 %%
 \section{Durbin-Watson Test}
+
+어떤 시계열 \(X\)에 대한 오차가 독립 조건을 만족시키는지의 여부를 평가하는 지표로서 Durbin-Watson test가 소개된다.
+식 \eqref{DWtest}을 가지고 하는 것인데, 강의에서는 식 \eqref{DWtest}에 대한 조금 정성적인 설명들에만 치중하고 있다.
+이 테스트가 어떤 의미를 가지는 지 궁금해서 위키피디아도 찾아봤지만, 만족스러운 설명이 없었던 것 같고, (시계열 분석에 관한 가장 유명한 책인 것 같은) Shumway의 \emph{Time Series Analysis and Its Applications With \texttt R Examples}라는 책을 읽어보고는 있지만, 아무래도 이 테스트가 설명되어 있지는 않은 것 같다.
+(하지만 더 읽어봐야 한다.)
+아무튼 그래서, 내 나름대로 \eqref{DWtest}의 의미를 파악해보려고 해보았다.
+
 %%%
 \subsection{autocorrelation applied to the residual term}
 지금까지, 어떤 시계열 데이터에 대한 자기상관성(autocorrelation)에 대해 말했다.
-하지만, 3번 각주에서 말했듯이, 우리가 관심있는 것은 error term(오차, \(e_t\))의 자기상관성이고, 실제로는 error term을 알 수 없으니 대신에 residual term(잔차, \(\epsilon_t\))의 자기상관성을 다룬다.
+하지만, 4번 각주에서 말했듯이, 우리가 관심있는 것은 error term(오차, \(e_t\))의 자기상관성이고, 실제로는 error term을 알 수 없으니 대신에 residual term(잔차, \(\epsilon_t\))의 자기상관성을 다룬다.
 residual term들의 수열을 그냥 \(\epsilon\)이라고 하자.
 \[\epsilon=\{\epsilon_t:t=1,2,\cdots,n\}\]
 그리고 \(\epsilon\)을 한 timestep 민 것을 \(\epsilon'\)이라고 하자 (first order; lag=1)
@@ -432,7 +443,7 @@ residual term들의 수열을 그냥 \(\epsilon\)이라고 하자.
 \begin{aligned}
 \rho_1(\epsilon)
 &=\text{Cor}(\epsilon,\epsilon')\\
-&=\frac{\sum_{t=1}^n(\epsilon_t-\mu)(\epsilon_{t+1}-\nu)}{\sqrt{\sum_{t=1}^n(\epsilon_t-\mu)^2}\sqrt{\sum_{t=1}^n(\epsilon_{t+1}-\nu)^2}}
+&=\frac{\sum_{t=2}^n(\epsilon_t-\mu)(\epsilon_{t-1}-\nu)}{\sqrt{\sum_{t=2}^n(\epsilon_t-\mu)^2}\sqrt{\sum_{t=2}^n(\epsilon_{t-1}-\nu)^2}}
 \end{aligned}
 \end{equation}
 
@@ -449,20 +460,20 @@ d = \frac{\sum_{i=2}^n(\epsilon_i-\epsilon_{i-1})^2}{\sum_{i=1}^n{\epsilon_i}^2}
 또한, \(\epsilon_t\)의 분산은 \(t\)에 따라서 달라지지 않는다고도 했으니, 분모의 두 항은 같다고도 할 수 있을 것이다.
 그러니 \eqref{autocorrelation_of_residual}을
 \begin{equation}\label{autocorrelation_of_residual_modified}
-\rho_1(\epsilon)=\frac{\sum_{t=1}^n\epsilon_t\epsilon_{t+1}}{\sum_{t=1}^n{\epsilon_t}^2}
+\rho_1(\epsilon)=\frac{\sum_{t=2}^n\epsilon_t\epsilon_{t+1}}{\sum_{t=2}^n{\epsilon_t}^2}
 \end{equation}
 로 바꿀 수 있다.
 그러면 식이 \eqref{DWtest}와 조금 비슷해지기는 했다.
-index가 $i$로 써져있는 것은 크게 문제가 되지 않고, $i$의 범위가 2에서 n까지인 것도 \eqref{autocorrelation_of_residual_modified}에서 $n$을 $n-1$로 바꾸면 \(\epsilon_i\)와 \(\epsilon_{i-1}\)가 각각 \(\epsilon_{t+1}\)과 \(\epsilon_t\)에 대응되니깐 말이 된다.
+index가 $i$로 써져있는 것은 크게 문제가 되지 않고, 분모에서 $i$의 범위가 1에서 \(n\)까지인 것도 \eqref{autocorrelation_of_residual_modified}에서 $t$의 범위가 1에서 \(n-1\)까지인 것과 (조금 다르지만) 거의 비슷하다.
 다만, 분자가 \((\epsilon_i-\epsilon_{i-1})^2\) 꼴인 것은 \(\epsilon_t\epsilon_{t+1}\)인 것과 많이 다르다.
 식 \eqref{DWtest}를 \eqref{autocorrelation_of_residual_modified}의 형태로 바꾸어서, \(d\)와 \(\rho_1(\epsilon)\) 사이의 관계를 살펴보면,
 \begin{equation}\label{relation_between_d_and_rho}
 \begin{aligned}
 d
-&=\frac{\sum_{t=1}^n(\epsilon_{t+1}-\epsilon_t)^2}{\sum_{t=1}^n{\epsilon_t}^2}\\
-&=\frac{\sum_{t=1}^n{\epsilon_{t+1}}^2-2\sum_{t=1}^n\epsilon_{t+1}\epsilon_t+\sum_{t=1}^n{\epsilon_t}^2}{\sum_{t=1}^n{\epsilon_t}^2}\\
-&=2-2\frac{\sum_{t=1}^n\epsilon_{t+1}\epsilon_t}{\sum_{t=1}^n{\epsilon_t}^2}\\
-&=2-\rho_1(\epsilon)
+&=\frac{\sum_{t=2}^n(\epsilon_{t+1}-\epsilon_t)^2}{\sum_{t=2}^n{\epsilon_t}^2}\\
+&=\frac{\sum_{t=2}^n{\epsilon_{t+1}}^2-2\sum_{t=2}^n\epsilon_{t+1}\epsilon_t+\sum_{t=2}^n{\epsilon_t}^2}{\sum_{t=2}^n{\epsilon_t}^2}\\
+&=2-2\frac{\sum_{t=2}^n\epsilon_{t+1}\epsilon_t}{\sum_{t=2}^n{\epsilon_t}^2}\\
+&\approx 2-\rho_1(\epsilon)
 \end{aligned}
 \end{equation}
 \(\rho_1(\epsilon)\)이 0에 가깝게 되면 residual term의 autocorrelation이 0에 가깝게 되는 것이고, 잔차들이 서로 독립이라는 것을 의미한다.
@@ -476,13 +487,13 @@ d
 강의의 32분 40초쯤의 설명에서 \(d\)가 작으면 (대립가설을 택하여) `\(X\)가 positively autocorrelated 하다.'라는 결론을 내린다고 되어 있고, \(d\)가 크면 (귀무가설을 택하여) `\(X\)가 not autocorrelated하다.'라는 결론을 내린다고 되어 있다.
 실제로, 식 \eqref{relation_between_d_and_rho}에서 \(d\)가 2보다 작다는 것은 \(\rho_1(\epsilon)\)이 양수라는 것이고, 정말로 positively autocorrelated라는 것을 뜻한다.
 영상에서는 \(d_L\)과 \(d_U\)를 설정해서 `positively autocorrelated test'를 소개하고 있는 것 같다.
-\(d_L\)은 \(d\)의 lower bound라는 점에서, \(d_U\)는 \(d\)의 upper bound라는 점에서 \(L\)과 \(U\)를 subscript로 쓴 것 같다.
-이 값들은 임계값(threshold)의 역할을 한다.
+아래첨자로 사용된 \(L\)과 \(U\)는 각각 lower, upper를 말하는 것 같다.
+이 \(d_L\)과 \(d_U\)들은 임계값(threshold)의 역할을 한다.
 
 만약, \(d_L\)을 2보다 조금 작은 값으로 잡는다면, \(d\)가 \(d_L\)보다 작다는 것이, \(\rho_1(\epsilon)\)이 특정한 양수보다 크다는 것을 의미하고, 이것은 \(X\)가 어느 정도 positively autocorrelated 되어 있다는 것을 말한다고 볼 수 있다.
 그리고 \(d_U\)를 \(d_L\)보다는 조금 크면서 \(2\)보다는 작은 값으로 적당히 잡는다면, \(d\)가 \(d_L\)보다 크다는 것이, \(\rho_1(\epsilon)\)이 특정한 양수\footnote{앞 문장에서의 `특정한 양수'보다는 조금 작은 양수} 보다 작다는 것을 의미하고, 이것은 \(X\)가 꼭 positively autocorrelated 되어있다고는 볼 수 없다는 걸 이야기한다고 말할 수 있다.
 그렇다고 해서 negatively autocorrelated라는 것은 아니다.
-negatively autocorrelated 되어 있는지의 여부는 `negatively autocorrelated test`를 통해서 따로 해야 할 것이다.
+negatively autocorrelated 되어 있는지의 여부는 `negatively autocorrelated test'를 통해서 따로 해야 할 것이다.
 
 \begin{center}
 \includegraphics[width=.3\textwidth]{d_L_and_d_U}
