@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 08:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 08:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,120 +613,116 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<model_0.png, id=33, 1445.4pt x 1084.05pt>
+<model_0.png, id=54, 1445.4pt x 1084.05pt>
 File: model_0.png Graphic file (type png)
 <use model_0.png>
 Package pdftex.def Info: model_0.png  used on input line 16.
 (pdftex.def)             Requested size: 258.75394pt x 194.06194pt.
-<model_1-1.png, id=35, 1445.4pt x 1084.05pt>
+<model_1-1.png, id=56, 1445.4pt x 1084.05pt>
 File: model_1-1.png Graphic file (type png)
 <use model_1-1.png>
 Package pdftex.def Info: model_1-1.png  used on input line 39.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-2.png, id=36, 1445.4pt x 1084.05pt>
+<model_1-2.png, id=57, 1445.4pt x 1084.05pt>
 File: model_1-2.png Graphic file (type png)
 <use model_1-2.png>
 Package pdftex.def Info: model_1-2.png  used on input line 40.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-3.png, id=37, 1445.4pt x 1084.05pt>
+<model_1-3.png, id=58, 1445.4pt x 1084.05pt>
 File: model_1-3.png Graphic file (type png)
 <use model_1-3.png>
 Package pdftex.def Info: model_1-3.png  used on input line 41.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-4.png, id=38, 1445.4pt x 1084.05pt>
+<model_1-4.png, id=59, 1445.4pt x 1084.05pt>
 File: model_1-4.png Graphic file (type png)
 <use model_1-4.png>
 Package pdftex.def Info: model_1-4.png  used on input line 42.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-5.png, id=39, 1445.4pt x 1084.05pt>
+<model_1-5.png, id=60, 1445.4pt x 1084.05pt>
 File: model_1-5.png Graphic file (type png)
 <use model_1-5.png>
 Package pdftex.def Info: model_1-5.png  used on input line 43.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-6.png, id=40, 1445.4pt x 1084.05pt>
+<model_1-6.png, id=61, 1445.4pt x 1084.05pt>
 File: model_1-6.png Graphic file (type png)
 <use model_1-6.png>
 Package pdftex.def Info: model_1-6.png  used on input line 44.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-7.png, id=41, 1445.4pt x 1084.05pt>
+<model_1-7.png, id=62, 1445.4pt x 1084.05pt>
 File: model_1-7.png Graphic file (type png)
 <use model_1-7.png>
 Package pdftex.def Info: model_1-7.png  used on input line 45.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
  [2 <./model_0.png> <./model_1-1.png> <./model_1-2.png> <./model_1-3.png> <./mo
-del_1-4.png>]
-
-LaTeX Warning: Reference `model_1-1' on page 3 undefined on input line 75.
-
-[3 <./model_1-5.png> <./model_1-6.png> <./model_1-7.png>]
-<model_2-1.png, id=84, 1445.4pt x 1084.05pt>
+del_1-4.png>] [3 <./model_1-5.png> <./model_1-6.png> <./model_1-7.png>]
+<model_2-1.png, id=105, 1445.4pt x 1084.05pt>
 File: model_2-1.png Graphic file (type png)
 <use model_2-1.png>
 Package pdftex.def Info: model_2-1.png  used on input line 116.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_2-2.png, id=85, 1445.4pt x 1084.05pt>
+<model_2-2.png, id=106, 1445.4pt x 1084.05pt>
 File: model_2-2.png Graphic file (type png)
 <use model_2-2.png>
 Package pdftex.def Info: model_2-2.png  used on input line 117.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_2-3.png, id=86, 1445.4pt x 1084.05pt>
+<model_2-3.png, id=107, 1445.4pt x 1084.05pt>
 File: model_2-3.png Graphic file (type png)
 <use model_2-3.png>
 Package pdftex.def Info: model_2-3.png  used on input line 118.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_2-4.png, id=87, 1445.4pt x 1084.05pt>
+<model_2-4.png, id=108, 1445.4pt x 1084.05pt>
 File: model_2-4.png Graphic file (type png)
 <use model_2-4.png>
 Package pdftex.def Info: model_2-4.png  used on input line 119.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
  [4]
-<model_3-1.png, id=100, 1445.4pt x 1084.05pt>
+<model_3-1.png, id=120, 1445.4pt x 1084.05pt>
 File: model_3-1.png Graphic file (type png)
 <use model_3-1.png>
 Package pdftex.def Info: model_3-1.png  used on input line 125.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-2.png, id=101, 1445.4pt x 1084.05pt>
+<model_3-2.png, id=121, 1445.4pt x 1084.05pt>
 File: model_3-2.png Graphic file (type png)
 <use model_3-2.png>
 Package pdftex.def Info: model_3-2.png  used on input line 126.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-3.png, id=102, 1445.4pt x 1084.05pt>
+<model_3-3.png, id=122, 1445.4pt x 1084.05pt>
 File: model_3-3.png Graphic file (type png)
 <use model_3-3.png>
 Package pdftex.def Info: model_3-3.png  used on input line 127.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-4.png, id=103, 1445.4pt x 1084.05pt>
+<model_3-4.png, id=123, 1445.4pt x 1084.05pt>
 File: model_3-4.png Graphic file (type png)
 <use model_3-4.png>
 Package pdftex.def Info: model_3-4.png  used on input line 128.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
  [5 <./model_2-1.png> <./model_2-2.png> <./model_2-3.png> <./model_2-4.png>]
-<model_4-1.png, id=113, 1445.4pt x 1084.05pt>
+<model_4-1.png, id=132, 1445.4pt x 1084.05pt>
 File: model_4-1.png Graphic file (type png)
 <use model_4-1.png>
 Package pdftex.def Info: model_4-1.png  used on input line 134.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-2.png, id=114, 1445.4pt x 1084.05pt>
+<model_4-2.png, id=133, 1445.4pt x 1084.05pt>
 File: model_4-2.png Graphic file (type png)
 <use model_4-2.png>
 Package pdftex.def Info: model_4-2.png  used on input line 135.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-3.png, id=115, 1445.4pt x 1084.05pt>
+<model_4-3.png, id=134, 1445.4pt x 1084.05pt>
 File: model_4-3.png Graphic file (type png)
 <use model_4-3.png>
 Package pdftex.def Info: model_4-3.png  used on input line 136.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-4.png, id=116, 1445.4pt x 1084.05pt>
+<model_4-4.png, id=135, 1445.4pt x 1084.05pt>
 File: model_4-4.png Graphic file (type png)
 <use model_4-4.png>
 Package pdftex.def Info: model_4-4.png  used on input line 137.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-5.png, id=117, 1445.4pt x 1084.05pt>
+<model_4-5.png, id=136, 1445.4pt x 1084.05pt>
 File: model_4-5.png Graphic file (type png)
 <use model_4-5.png>
 Package pdftex.def Info: model_4-5.png  used on input line 138.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-6.png, id=118, 1445.4pt x 1084.05pt>
+<model_4-6.png, id=137, 1445.4pt x 1084.05pt>
 File: model_4-6.png Graphic file (type png)
 <use model_4-6.png>
 Package pdftex.def Info: model_4-6.png  used on input line 139.
@@ -734,27 +730,15 @@ Package pdftex.def Info: model_4-6.png  used on input line 139.
  [6 <./model_3-1.png> <./model_3-2.png> <./model_3-3.png> <./model_3-4.png>] [7
  <./model_4-1.png> <./model_4-2.png> <./model_4-3.png> <./model_4-4.png> <./mod
 el_4-5.png> <./model_4-6.png>] (./Time_Series_Regression_3.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Time_Series_Regression_3.out' has changed
-.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Time_Series_Regression_3.out':
-(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
-(rerunfilecheck)             After:  42C8BFFDA5BAC58984BADCA5CFB38400;668.
+Package rerunfilecheck Info: File `Time_Series_Regression_3.out' has not change
+d.
+(rerunfilecheck)             Checksum: 42C8BFFDA5BAC58984BADCA5CFB38400;668.
  ) 
 Here is how much of TeX's memory you used:
- 12285 strings out of 475071
- 197168 string characters out of 5782908
- 557941 words of memory out of 5000000
- 33444 multiletter control sequences out of 15000+600000
+ 12290 strings out of 475071
+ 197214 string characters out of 5782908
+ 558086 words of memory out of 5000000
+ 33449 multiletter control sequences out of 15000+600000
  494924 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,11n,77p,511b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -810,10 +794,10 @@ st/fonts/type1/public/nanumtype1/nanummjmd4.pfb><c:/texlive/2022/texmf-dist/fon
 ts/type1/public/nanumtype1/nanummjmd5.pfb><c:/texlive/2022/texmf-dist/fonts/typ
 e1/public/nanumtype1/nanummjmd6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on Time_Series_Regression_3.pdf (7 pages, 9193840 bytes).
+Output written on Time_Series_Regression_3.pdf (7 pages, 9201734 bytes).
 PDF statistics:
- 354 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
+ 373 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
  16 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
