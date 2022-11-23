@@ -25,26 +25,29 @@
 %%%
 \subsection{회귀에서의 오차와 잔차}
 회귀(regression)란, 독립변수 \(x\)와 종속변수 \(y\)에 대하여 관측값(observed value)들이 주어져 있을 때, 두 변수 사이의 관계를 찾는 것이다.
-조금 더 정확하게는, \(y\)를 \(x\)에 대한 함수 \(y=g(x)\)로서 표현하는 것이다.
+조금 더 정확하게는, \(y\)를 \(x\)에 대한 함수 \(y=f(x)\)로서 표현하는 것이다.
 관측값은 다음과 같이 주어질 것이다.
 \[\text{관측값} = \{(x_i,y_i):i=1,2,\cdots,n\}.\]
-일부 \(x\)값들에 대해서만 \(y\)값들이 주어져있으므로 함수 \(g\)를 완벽하게 안다는 것은 불가능하다.
+일부 \(x\)값들에 대해서만 \(y\)값들이 주어져있으므로 함수 \(f\)를 완벽하게 안다는 것은 불가능하다.
 대신, 관측값들을 토대로 하여 만든 최적의 함수 \(\hat f\)를 생각하게 된다.
 이때, 관측값 \(y_i\)에 대한 오차(error, \(e_i\))와 잔차(residual, \(\epsilon_i\))는 다음과 같다.
 \begin{align}
-e_i&=y_i-g(x_i)\label{error}\\
+e_i&=y_i-f(x_i)\label{error}\\
 \epsilon_i&=y_i-\hat f(x_i)\label{residual}
 \end{align}
 예측값인 \(\hat f(x_i)\)는 \(\hat y_i\)라고 쓰기도 하므로, 잔차를 다음과 같이 쓰기도 한다.
 \[\epsilon_i=y_i-\hat y_i.\]
 
 최적의 함수 \(\hat f\)를 찾아가는 과정은 다음과 같다.
-먼저, 여러 개의 매개변수 \(\beta_0\), \(\beta_1\), \(\beta_2\), \(\cdots\), \(\beta_k\)를 통해 함수 \(f=F[\beta_0,\beta_1,\cdots,\beta_k]\)를 정의한다.
-즉, 함수 \(f\)는 parametric function/model 이다. (resp. nonparametric function/model).
-그리고, 그러한 \(f\)들 중에서 관측값들을 가장 잘 반영하는 함수 \(\hat f\)를 찾는다.
+먼저, 여러 개의 매개변수 \(\beta_0\), \(\beta_1\), \(\beta_2\), \(\cdots\), \(\beta_k\)를 통해 함수 \(f_\beta\)를 정의한다.
+\footnote{여기서 \(\beta\)는 매개변수 \(\beta_i\)들의 집합이라는 의미에서 썼다.
+머신러닝에서 \(\Theta\)를 매개변수 \(w_{ij}\), \(b_i\)들의 집합으로 자주 표현하듯이.
+그러니까, 굳이 식으로 써보자면 \(\beta=\{\beta_0,\beta_1,\cdots,\beta_k\}\)이 된다.}
+즉, 함수 \(f_\beta\)는 parametric function/model 이다. (resp. nonparametric function/model).
+그리고, 그러한 \(f_\beta\)들 중에서 관측값들을 가장 잘 반영하는 함수 \(\hat f\)를 찾는다.
 다시 말해, 전체적으로 \(y_i\)와 \(f(x_i)\)가 가장 비슷해지는 \(\beta_0,\beta_1,\cdots,\beta_k\)을 찾는데, 이때에 `비슷함'의 기준은 MSE 등을 통해 정할 수 있다.
 가장 비슷해지는 때의 \(\beta_0,\beta_1,\cdots,\beta_k\)는, hat을 붙여서 \(\hat\beta_0,\hat\beta_1,\cdots,\hat\beta_k\)로 표현한다.
-그리고 이 매개변수(parameters)들을 가지고 최적의 함수 \(\hat f =  F[\hat\beta_0,\hat\beta_1,\cdots,\hat\beta_k]\)를 정의한다.
+그리고 이 매개변수(parameters)들을 가지고 최적의 함수 \(\hat f =  f_{\hat\beta}\)를 정의한다.
 
 %%
 \section{여러가지 회귀모델}
@@ -59,21 +62,21 @@ e_i&=y_i-g(x_i)\label{error}\\
 
 %%%
 \subsection{상수회귀(no trend)}
-상수함수 \(f(x)=\beta_0\)를 생각하자.
+상수함수 \(f_\beta(x)=\beta_0\)를 생각하자.
 아까 말했듯이, 이것은 parametric function이다.
 즉 매개변수(parameter) \(\beta_0\)에 의해 결정되는 함수이다.
-이러한 \(f\) 중에서 최적의 \(\hat f\)를 구한다는 것은, 다음과 같은 MSE 값이 최소가 되는 때를 찾는 것이다.
+이러한 \(f_\beta\) 중에서 최적의 \(\hat f\)를 구한다는 것은, 다음과 같은 MSE 값이 최소가 되는 때를 찾는 것이다.
 \begin{align*}
 MSE(\beta_0)
-& = \sum_{t=1}^n(y_t-f(x_t))^2\\
-& = \sum_{t=1}^n(y_t-\beta_0)^2
+& = \frac1n\sum_{t=1}^n(y_t-f_\beta(x_t))^2\\
+& = \frac1n\sum_{t=1}^n(y_t-\beta_0)^2
 \end{align*}
 이때, MSE는 \(\beta_0\)의 값에만 의존한다.
 조금 더 정확하게는, MSE는 \(\beta_0\)에 대한 이차함수이다.
 이 이차함수의 최솟값은 중학교 3학년 과정의 방식으로 풀어도 되기는 하지만, 미분해서 0이 되는 때를 구해도 상관없다;
 \begin{gather*}
 \frac{d}{d\beta_0}MSE(\beta_0)=0\\
--2\sum_{t=1}^n(y_t-\beta_0)=0\\
+-\frac2n\sum_{t=1}^n(y_t-\beta_0)=0\\
 \sum_{t=1}^ny_t-n\beta_0=0\\
 \beta_0=\frac1n\sum_{t=1}^ny_t.
 \end{gather*}
@@ -83,26 +86,26 @@ MSE(\beta_0)
 
 %%%
 \subsection{선형회귀(linear trend, linear regression)}
-일차함수 \(f(x)=\beta_0+\beta_1x\)를 생각하자.\footnotemark
+일차함수 \(f_\beta(x)=\beta_0+\beta_1x\)를 생각하자.\footnotemark
 \footnotetext{정확하게는 일차함수(linear function)라는 표현보다는 `affine 함수(affine function)'라고 써야 더 맞을 것 같다.}
 이것도 parametric function이다.
 즉, \(\beta_0\)와 \(\beta_1\)에 의해 결정되는 함수이다.
 이번에도 \(\hat f\)를 구하기 위해 MSE가 최솟값이 되는 때를 찾는다.
 다만, 이번에는 MSE가 두 매개변수 \(\beta_0\), \(\beta_1\)의 함수이다.
-\[MSE(\beta_0,\beta_1)=\sum_{t=1}^n(y_t-\beta_0-\beta_1x)^2\]
+\[MSE(\beta_0,\beta_1)=\frac1n\sum_{t=1}^n(y_t-\beta_0-\beta_1x)^2\]
 이것은 다변수함수라는 점에서는 아까보다 훨씬 복잡한 함수이지만, 이차함수라는 점에서는 간단하다.
 아래로 볼록한 포물면을 그래프로 가지고, 단 하나의 극솟값을 가지므로 이 함수가 극솟값(local minimum)을 가지게 되는 \((\beta_0, \beta_1)\)만 찾으면 그때가 최소점(global minimum)이 된다.
 그리고 그건 MSE를 두 매개변수 \(\beta_0\), \(\beta_1\)로 각각 편미분하여 0이 되는 때이다.
 먼저 \(\frac{\partial}{\partial\beta_0}MSE(\beta_0,\beta_1)=0\)를 간단히하면
 \begin{gather*}
 \frac{\partial}{\partial\beta_0}MSE(\beta_0,\beta_1)=0\\
--2\sum_{t=1}^n(y_t-\beta_0-\beta_1x_t)=0\\
+-\frac2\sum_{t=1}^n(y_t-\beta_0-\beta_1x_t)=0\\
 \sum_{t=1}^ny_t-n\beta_0-\beta_1\sum_{i=1}^nx_t=0
 \end{gather*}
 이고, \(\frac{\partial}{\partial\beta_1}MSE(\beta_0,\beta_1)=0\)를 간단히하면
 \begin{gather*}
 \frac{\partial}{\partial\beta_1}MSE(\beta_0,\beta_1)=0\\
--2\sum_{t=1}^nx_t(y_t-\beta_0-\beta_1x_t)=0\\
+-\frac2n\sum_{t=1}^nx_t(y_t-\beta_0-\beta_1x_t)=0\\
 \sum_{t=1}^nx_ty_t-\beta_0\sum_{t=1}^nx_t-\beta_1\sum_{t=1}^n{x_t}^2=0
 \end{gather*}
 따라서
@@ -125,9 +128,9 @@ n&\sum x_t\\
 
 %%%
 \subsection{이차회귀(quadratic trend, quadratic regression)}
-이차함수 \(f(x)=\beta_0+\beta_1x+\beta_2x^2\)를 생각하자.
+이차함수 \(f_\beta(x)=\beta_0+\beta_1x+\beta_2x^2\)를 생각하자.
 위와 마찬가지로
-\[MSE(\beta_0,\beta_1,\beta_2)=\sum_{t=1}^n(y_t-\beta_0-\beta_1{x_t}-\beta_2{x_t}^2)^2\]
+\[MSE(\beta_0,\beta_1,\beta_2)=\frac1n\sum_{t=1}^n(y_t-\beta_0-\beta_1{x_t}-\beta_2{x_t}^2)^2\]
 이다.
 이것은 \(\beta_0\), \(\beta_1\), \(\beta_2\)에 대한 함수이다.
 각각의 매개변수 \(\beta_0\), \(\beta_1\), \(\beta_2\)에 대한 편미분값을 0으로 둠으로써 연립방정식을 얻고,
@@ -152,23 +155,23 @@ n&\sum x_t&\sum{x_t}^2\\
 
 %%%
 \subsection{다항회귀(polynomial trend, polynomial regression)}
-마찬가지로, 다항함수 \(f(x)=\beta_0+\beta_1x+\beta_2x^2+\cdots+\beta_kx^k\)를 parametric model로 잡으면
-\[MSE(\beta_0,\beta_1,\beta_2,\cdots,\beta_k)=\sum_{t=1}^n(y_t-\beta_0-\beta_1x-\beta_2x^2-\cdots-\beta_kx^k)^2\]
+마찬가지로, 다항함수 \(f_\beta(x)=\beta_0+\beta_1x+\beta_2x^2+\cdots+\beta_kx^k\)를 parametric model로 잡으면
+\[MSE(\beta_0,\beta_1,\beta_2,\cdots,\beta_k)=\frac1n\sum_{t=1}^n(y_t-\beta_0-\beta_1x-\beta_2x^2-\cdots-\beta_kx^k)^2\]
 이고, 똑같은 작업을 통해 \(\hat f(x)=\hat \beta_0+\hat \beta_1x+\hat \beta_2x^2+\cdots+\hat \beta_kx^k\)를 계산할 수 있다.
 
 \textbf{2.1 \(\sim\) 2.4}에서와 같이, \(\hat f\)를 계산하는 방식을 최소제곱법(최소자승법, least square method, least square estimation, the method of least square)이라고 한다.
 또한, 지금까지 한 것은 한 변수에 대한 회귀(univariate regression)였다.
 일반적으로는 다변수에 대해서도 회귀(multivariate regression)를 진행할 수 있다.
-변수들을 \(x_1\), \(x_2\), \(\cdots\), \(x_k\)이라고 하면 parametric model \(f(x_1,x_2,\cdots,x_k)\)을 생각할 수 있다.
+변수들을 \(x_1\), \(x_2\), \(\cdots\), \(x_k\)이라고 하면 parametric model \(f_\beta(x_1,x_2,\cdots,x_k)\)을 생각할 수 있다.
 가장 간단한 경우는 다변수 선형회귀(multivariate linear regression)일 것이고, 그것은 parametric model을
-\[f(x_1,x_2,\cdots,x_k)=\beta_0+\beta_1x_1+\cdots+\beta_kx_k\]
+\[f_\beta(x_1,x_2,\cdots,x_k)=\beta_0+\beta_1x_1+\cdots+\beta_kx_k\]
 로 두는 것이다.
 이 때에도 마찬가지로 최소제곱법을 사용해서 \(\hat f\)를 계산할 수 있다.
 
 %%
 \section{자기상관성(autocorrelation)}
 회귀문제에서 각각의 오차(\(e_t\))들에 대하여 전제되어야 하는 몇가지 가정들이 있었다.\footnote{왜 이런 가정이 필요한지는 아직 이해하지 못했다.
-하지만 `아래의 두 가정을 따르도록 하는 \(f\)를 고려하겠다.' 정도로 생각해도 될 것 같다.}
+하지만 `아래의 두 가정을 따르도록 하는 \(f_\beta\)를 고려하겠다.' 정도로 생각해도 될 것 같다.}
 \begin{itemize}
 \item
 \(e_t\sim N(0,\sigma^2)\) : 오차는 평균이 0인 정규분포를 따른다.
@@ -433,7 +436,7 @@ lag를 1로 고정한 상태에서, 예시 1에서는 alternating 주기가 2였
 %%%
 \subsection{autocorrelation applied to the residual term}
 지금까지, 어떤 시계열 데이터에 대한 자기상관성(autocorrelation)에 대해 말했다.
-하지만, 4번 각주에서 말했듯이, 우리가 관심있는 것은 error term(오차, \(e_t\))의 자기상관성이고, 실제로는 error term을 알 수 없으니 대신에 residual term(잔차, \(\epsilon_t\))의 자기상관성을 다룬다.
+하지만, 5번 각주에서 말했듯이, 우리가 관심있는 것은 error term(오차, \(e_t\))의 자기상관성이고, 실제로는 error term을 알 수 없으니 대신에 residual term(잔차, \(\epsilon_t\))의 자기상관성을 다룬다.
 residual term들의 수열을 그냥 \(\epsilon\)이라고 하자.
 \[\epsilon=\{\epsilon_t:t=1,2,\cdots,n\}\]
 그리고 \(\epsilon\)을 한 timestep 민 것을 \(\epsilon'\)이라고 하자 (first order; lag=1)
@@ -473,7 +476,7 @@ d
 &=\frac{\sum_{t=2}^n(\epsilon_{t+1}-\epsilon_t)^2}{\sum_{t=2}^n{\epsilon_t}^2}\\
 &=\frac{\sum_{t=2}^n{\epsilon_{t+1}}^2-2\sum_{t=2}^n\epsilon_{t+1}\epsilon_t+\sum_{t=2}^n{\epsilon_t}^2}{\sum_{t=2}^n{\epsilon_t}^2}\\
 &=2-2\frac{\sum_{t=2}^n\epsilon_{t+1}\epsilon_t}{\sum_{t=2}^n{\epsilon_t}^2}\\
-&\approx 2-\rho_1(\epsilon)
+&\approx 2-2\rho_1(\epsilon)
 \end{aligned}
 \end{equation}
 \(\rho_1(\epsilon)\)이 0에 가깝게 되면 residual term의 autocorrelation이 0에 가깝게 되는 것이고, 잔차들이 서로 독립이라는 것을 의미한다.
@@ -509,14 +512,14 @@ negatively autocorrelated 되어 있는지의 여부는 `negatively autocorrelat
 
 negatively autocorrelated test에 대한 설명은 위의 그림과 같다.
 여기에서는 \(d\)가 아닌 \(4-d\)를 사용하는데 \eqref{relation_between_d_and_rho}을 변형하면
-\[4-d=2+\rho_1(\epsilon)\]
+\[4-d=2+2\rho_1(\epsilon)\]
 이 된다.
 이번에는 \(d_L\)과 \(d_U\)의 값이 예를 통해 제시되고 있지는 않다.
 하지만 아까와 같은 \(d_L=1.20\), \(d_U=1.41\)로 생각하고 해석해보면 다음과 같다.
-만약 \(4-d\)가 \(d_L=1.20\)보다 작으면, 그것은 \(2+\rho_1(\epsilon)<1.20\), \(\rho_1(\epsilon)<-0.8\)을 의미한다.
-그러니까, \(\rho_1(\epsilon)\)이 음수이면서, 그냥 음수도 아니고 일정한 절댓값(0.8)보다 크게 음수로 나타나고 있다.
+만약 \(4-d\)가 \(d_L=1.20\)보다 작으면, 그것은 \(2+2\rho_1(\epsilon)<1.20\), \(\rho_1(\epsilon)<-0.4\)을 의미한다.
+그러니까, \(\rho_1(\epsilon)\)이 음수이면서, 그냥 음수도 아니고 일정한 절댓값(0.4)보다 크게 음수로 나타나고 있다.
 이럴 때에, \(X\)가 negatively autocorrelated하다고 판단한다.
-또한, 만약 \(4-d\)가 \(d_U=1.41\)보다 크면, 그것은 \(2+\rho_1(\epsilon)>1.41\), \(\rho_1(\epsilon)>-0.59\)를 의미힌다.
+또한, 만약 \(4-d\)가 \(d_U=1.41\)보다 크면, 그것은 \(2+2\rho_1(\epsilon)>1.41\), \(\rho_1(\epsilon)>-0.295\)를 의미힌다.
 그러니까, \(\rho_1(\epsilon)\)이 음수일 수도 있기는 하지만, 아주 절댓값이 큰 음수는 아니라는 것을, 그러니까 \(X\)가 negatively autocorrelated라고 판단할 만큼은 아니라는 것을 알 수 있다.
 
 마지막으로, Durbin-Watson test에 대한 comment를 그냥 캡쳐해서 첨부해보았다.

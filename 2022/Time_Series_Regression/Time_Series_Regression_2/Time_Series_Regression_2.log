@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  21 NOV 2022 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -605,86 +605,86 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
 
-Overfull \hbox (9.61345pt too wide) detected at line 284
+Overfull \hbox (9.61345pt too wide) detected at line 287
 []
  []
 
 [6]
-<autocorrelation-1.png, id=214, 1075.76906pt x 874.01532pt>
+<autocorrelation-1.png, id=217, 1075.76906pt x 874.01532pt>
 File: autocorrelation-1.png Graphic file (type png)
 <use autocorrelation-1.png>
-Package pdftex.def Info: autocorrelation-1.png  used on input line 331.
+Package pdftex.def Info: autocorrelation-1.png  used on input line 334.
 (pdftex.def)             Requested size: 310.50787pt x 252.27101pt.
  [7]
-<autocorrelation-2.png, id=224, 3670.71375pt x 1815.78375pt>
+<autocorrelation-2.png, id=226, 3670.71375pt x 1815.78375pt>
 File: autocorrelation-2.png Graphic file (type png)
 <use autocorrelation-2.png>
-Package pdftex.def Info: autocorrelation-2.png  used on input line 350.
+Package pdftex.def Info: autocorrelation-2.png  used on input line 353.
 (pdftex.def)             Requested size: 517.50787pt x 255.98122pt.
  [8 <./autocorrelation-1.png> <./autocorrelation-2.png>]
-<negative_autocorrelation.png, id=233, 941.01563pt x 750.55406pt>
+<negative_autocorrelation.png, id=235, 941.01563pt x 750.55406pt>
 File: negative_autocorrelation.png Graphic file (type png)
 <use negative_autocorrelation.png>
-Package pdftex.def Info: negative_autocorrelation.png  used on input line 393.
+Package pdftex.def Info: negative_autocorrelation.png  used on input line 396.
 (pdftex.def)             Requested size: 258.75394pt x 206.37437pt.
-<autocorrelation-3.png, id=234, 1355.0625pt x 596.2275pt>
+<autocorrelation-3.png, id=236, 1355.0625pt x 596.2275pt>
 File: autocorrelation-3.png Graphic file (type png)
 <use autocorrelation-3.png>
-Package pdftex.def Info: autocorrelation-3.png  used on input line 398.
+Package pdftex.def Info: autocorrelation-3.png  used on input line 401.
 (pdftex.def)             Requested size: 310.50787pt x 136.61996pt.
  [9 <./negative_autocorrelation.png>]
-<positive_autocorrelation.png, id=240, 974.13937pt x 727.96968pt>
+<positive_autocorrelation.png, id=242, 974.13937pt x 727.96968pt>
 File: positive_autocorrelation.png Graphic file (type png)
 <use positive_autocorrelation.png>
-Package pdftex.def Info: positive_autocorrelation.png  used on input line 404.
+Package pdftex.def Info: positive_autocorrelation.png  used on input line 407.
 (pdftex.def)             Requested size: 258.75394pt x 193.36647pt.
-<autocorrelation-4.png, id=241, 1159.33125pt x 456.95718pt>
+<autocorrelation-4.png, id=243, 1159.33125pt x 456.95718pt>
 File: autocorrelation-4.png Graphic file (type png)
 <use autocorrelation-4.png>
-Package pdftex.def Info: autocorrelation-4.png  used on input line 409.
+Package pdftex.def Info: autocorrelation-4.png  used on input line 412.
 (pdftex.def)             Requested size: 310.50787pt x 122.38997pt.
-<autocorrelation-5.png, id=242, 1251.92719pt x 539.76656pt>
+<autocorrelation-5.png, id=244, 1251.92719pt x 539.76656pt>
 File: autocorrelation-5.png Graphic file (type png)
 <use autocorrelation-5.png>
-Package pdftex.def Info: autocorrelation-5.png  used on input line 420.
+Package pdftex.def Info: autocorrelation-5.png  used on input line 423.
 (pdftex.def)             Requested size: 310.50787pt x 133.8706pt.
  [10 <./autocorrelation-3.png> <./positive_autocorrelation.png> <./autocorrelat
 ion-4.png>] [11 <./autocorrelation-5.png>]
-<positively_autocorrelated_test.png, id=268, 1048.66782pt x 710.655pt>
+<positively_autocorrelated_test.png, id=270, 1048.66782pt x 710.655pt>
 File: positively_autocorrelated_test.png Graphic file (type png)
 <use positively_autocorrelated_test.png>
 Package pdftex.def Info: positively_autocorrelated_test.png  used on input line
- 484.
+ 487.
 (pdftex.def)             Requested size: 258.75394pt x 175.34276pt.
-<d_L_and_d_U.png, id=271, 423.08063pt x 54.9553pt>
+<d_L_and_d_U.png, id=273, 423.08063pt x 54.9553pt>
 File: d_L_and_d_U.png Graphic file (type png)
 <use d_L_and_d_U.png>
-Package pdftex.def Info: d_L_and_d_U.png  used on input line 499.
+Package pdftex.def Info: d_L_and_d_U.png  used on input line 502.
 (pdftex.def)             Requested size: 155.25394pt x 20.16626pt.
  [12 <./positively_autocorrelated_test.png> <./d_L_and_d_U.png>]
-<negatively_autocorrelated_test.png, id=279, 1251.92719pt x 734.745pt>
+<negatively_autocorrelated_test.png, id=281, 1251.92719pt x 734.745pt>
 File: negatively_autocorrelated_test.png Graphic file (type png)
 <use negatively_autocorrelated_test.png>
 Package pdftex.def Info: negatively_autocorrelated_test.png  used on input line
- 507.
+ 510.
 (pdftex.def)             Requested size: 258.75394pt x 151.85693pt.
-<comment_on_DWtest.png, id=281, 1251.92719pt x 587.19376pt>
+<comment_on_DWtest.png, id=283, 1251.92719pt x 587.19376pt>
 File: comment_on_DWtest.png Graphic file (type png)
 <use comment_on_DWtest.png>
-Package pdftex.def Info: comment_on_DWtest.png  used on input line 525.
+Package pdftex.def Info: comment_on_DWtest.png  used on input line 528.
 (pdftex.def)             Requested size: 258.75394pt x 121.36107pt.
-<increasing_seasonal_variation.png, id=282, 1251.92719pt x 762.59906pt>
+<increasing_seasonal_variation.png, id=284, 1251.92719pt x 762.59906pt>
 File: increasing_seasonal_variation.png Graphic file (type png)
 <use increasing_seasonal_variation.png>
 Package pdftex.def Info: increasing_seasonal_variation.png  used on input line 
-532.
+535.
 (pdftex.def)             Requested size: 258.75394pt x 157.61382pt.
  [13 <./negatively_autocorrelated_test.png> <./comment_on_DWtest.png> <./increa
 sing_seasonal_variation.png>]
-<two_transforms.png, id=288, 1251.92719pt x 691.83469pt>
+<two_transforms.png, id=290, 1251.92719pt x 691.83469pt>
 File: two_transforms.png Graphic file (type png)
 <use two_transforms.png>
-Package pdftex.def Info: two_transforms.png  used on input line 542.
+Package pdftex.def Info: two_transforms.png  used on input line 545.
 (pdftex.def)             Requested size: 258.75394pt x 142.98824pt.
 
 [14 <./two_transforms.png>] (./Time_Series_Regression_2.aux)
@@ -693,13 +693,17 @@ d.
 (rerunfilecheck)             Checksum: 258C0AC1DB19466C1712952EAEFE409E;3144.
  ) 
 Here is how much of TeX's memory you used:
- 12046 strings out of 475071
- 194255 string characters out of 5782908
+ 12047 strings out of 475071
+ 194266 string characters out of 5782908
  562998 words of memory out of 5000000
  33146 multiletter control sequences out of 15000+600000
  521428 words of font info for 210 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,14n,77p,511b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
 , replaced by a fixed one
@@ -813,10 +817,10 @@ pe1/public/nanumtype1/nanummjmd5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
 blic/nanumtype1/nanummjmd6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/n
 anumtype1/nanummjmd7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-supe
 r/sfrm1000.pfb>
-Output written on Time_Series_Regression_2.pdf (14 pages, 7116520 bytes).
+Output written on Time_Series_Regression_2.pdf (14 pages, 7124847 bytes).
 PDF statistics:
- 662 PDF objects out of 1000 (max. 8388607)
- 451 compressed objects within 5 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 664 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 51 named destinations out of 1000 (max. 500000)
  194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
