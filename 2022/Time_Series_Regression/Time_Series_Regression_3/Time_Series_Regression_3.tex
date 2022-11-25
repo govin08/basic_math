@@ -98,13 +98,17 @@ f_\beta(t) = \begin{cases}
 그 다음으로 하는 것은 기존의 회귀분석(ordinary regression analysis)을 진행하는 것이다.
 강의에서는 45분 32초쯤에 `일반적인 최소제곱법(LSE, least square estimation ; OLS ordinary least square, ordinary least squares)'을 사용하는 것이다.
 표에서 관측치가 주어져있었다.
-\begin{align*}
+\begin{equation}\label{observations}
+\begin{aligned}
 \text{관측치}
 &=\{(t,y_t):t=1,2,\cdots,168\}\\
 &=\{(1,501), (2,488),\cdots,(168,877)\}
-\end{align*}
+\end{aligned}
+\end{equation}
 이걸 가지고 MSE를 계산하면
-\[\text{MSE}=\frac1{168}\sum_{t=1}^{168}\left(y_t-f_\beta(t)\right)^2\]
+\begin{equation}\label{MSE}
+\text{MSE}=\frac1{168}\sum_{t=1}^{168}\left(y_t-f_\beta(t)\right)^2
+\end{equation}
 이 된다.
 \(MSE\)를 \(\beta_0\), \(\beta_1\), \(\cdots\), \(\beta_{11}\)로 편미분한 것을 0으로 두면 미지수가 12개이고 식이 12개인 연립방정식이 나오는데, 그 연립방정식을 풀어 근을 \(\beta_0=\hat\beta_0\), \(\beta_1=\hat\beta_1\), \(\cdots\), \(\beta_{11}=\hat\beta_{11}\) \footnote{\(\beta=\hat\beta\)} \(\hat\beta_i\)들을 가지고 최적의 함수 \(\hat f\)를 찾을 수 있다.
 
@@ -119,6 +123,37 @@ f_\beta(t) = \begin{cases}
 \includegraphics[width=.45\textwidth]{model_2-4}
 \end{center}
 
+\(y_t=TR_t+SN_t+\epsilon_t\)에서 \(SN_t\)는 `계절성'을 의미했고, `이것은 일정한 주기를 가지는 패턴'정도로 이해할 수 있었다.
+그러니까 \(SN_t\)는 일정한 주기를 가지는 함수, 즉 주기함수이다.
+이러한 주기함수를 사인함수와 코사인함수의 일차결합인
+\begin{equation}\label{trigonometric_1}
+\beta_2\sin\left(\frac{2\pi t}L\right)+\beta_3\sin\left(\frac{2\pi t}L\right)
+\end{equation}
+로 표현하는 것은 적당해보인다.
+식 \eqref{trigonometric_1}은 적당한 실수 \(A=\sqrt{{\beta_2}^2+{\beta_3}^2}>0\), \(B\)에 대하여
+\begin{equation}\label{trigonometric_2}
+A\cos\left(\frac{2\pi t}L-B\right)
+\end{equation}
+로 바꿀 수 있으니, 이것은 임의의 사인곡선(코사인곡선)을 나타낸다.
+그런데 Model 2에서는 주기가 절반인 사인함수와 코사인함수의 일차결합을 더 더해서 표현하고 있다.
+이건 아무래도 푸리에 이론과 관련이 있을 것 같다.
+
+푸리에 이론에 따르면, 주기가 \(L\)인 임의의 주기함수 \(f:\mathbb R\to\mathbb R\)는 사인함수와 코사인함수의 급수로 표현할 수 있다.
+\[f(t) = \frac{a_0}2+\sum_{k=1}^\infty a_k\sin\left(\frac{2k\pi t}L\right)+b_k\cos\left(\frac{2k\pi t}L\right)\]
+그러니까, 함수 \(f_n\)을 (\(n=1,2,\cdots\))
+\[f(t) = \frac{a_0}2+\sum_{k=1}^n a_k\sin\left(\frac{2n\pi t}L\right)+b_k\cos\left(\frac{2k\pi t}L\right)\]
+로 두면 Model 2에서 \(SN_t\)는 \(f_1(t)+f_2(t)\)를 의미한다.
+\(\sum_{k=1}^nf_k(t)\)에서 \(n\)을 더 늘려가면, \(\sum f_k(t)\)는 점점 더 \(SN_t\)을 잘 표현할 수 있을 것이다.
+
+다시 돌아와서 말하자면, model 1에서는
+\[f_\beta(t)=\beta_0+\beta_1t+\beta_2\sin\left(\frac{2\pi t}L\right)+\beta_3\cos\left(\frac{2\pi t}L\right)\]
+로 parametric model을 잡는 것이고, model 2에서는
+\[f_\beta(t)=\beta_0+\beta_1t+\beta_2\sin\left(\frac{2\pi t}L\right)+\beta_3\cos\left(\frac{2\pi t}L\right)
++\beta_4\sin\left(\frac{4\pi t}L\right)+\beta_5\cos\left(\frac{4\pi t}L\right)\]
+로 두는 것이다.
+이 \(f_\beta\)를 가지고 관측치 \eqref{observations}를 MSE \eqref{MSE}에 적용하여 최적화문제를 풀면 \(\hat f\)를 찾을 수 있을 것이다.
+네번째 슬라이드에서는 관측치에 로그변환을 적용한 다음 \(SN_t\)을 모델링했으므로 나중에 다시 지수함수를 취해준다.
+
 %%
 \section{Growth Curve Models}
 \begin{center}
@@ -127,6 +162,11 @@ f_\beta(t) = \begin{cases}
 \includegraphics[width=.45\textwidth]{model_3-3}
 \includegraphics[width=.45\textwidth]{model_3-4}
 \end{center}
+
+이번 부분은 왜 있는지 모르겠다.
+기존의 모델이 additive한 형식의 모델이었다면, 이건 multipicative model을 설명하려는가본데, 사실 이전 Trigonometric Model에서 로그를 취하여 모델링하는 것을 이미 공부했다.
+그리고 지금 위의 캡쳐에 보이는 모델링 방법은 정확히 로그를 취한 linear model과 같아보인다.
+
 
 %%
 \section{First-Order Autoregressive Process}
@@ -138,5 +178,33 @@ f_\beta(t) = \begin{cases}
 \includegraphics[width=.45\textwidth]{model_4-5}
 \includegraphics[width=.45\textwidth]{model_4-6}
 \end{center}
+
+자세히 읽지 못했다. 아마도, 이전까지는 \(\epsilon_t\)와 \(\epsilon_{t-1}\)이 서로 독립이라는 조건 하에서 논의를 진행시켰던 것 같은데, 여기에서는 두 값이 서로 종속일 수밖에 없으니, \(\epsilon_t\)가 \(\epsilon_{t-1}\)로 표현될 수 있다고 보는 것 같다.
+정확하게는 \(\epsilon_t\)가 \(\epsilon_{t-1}\)에 대한 선형함수로 모델링 된다고 보는 것이고, 그 모델링에 대한 error term을 \(a_t\)로 두었다.
+\begin{equation}\label{modeling_on_error_term}
+\epsilon_t=\phi_1\epsilon_{t-1}+a_t
+\end{equation}
+\(\phi_1\)은 선형함수에 대한 계수(coefficient) 혹은 기울기이다.
+
+이것을 Durbin-Watson test와 연관지으려면 이전 강의의 노트에 썼던
+\begin{gather*}
+\epsilon=\{\epsilon_t:t=1,2,\cdots,n\}\\
+\epsilon'=\{\epsilon_{t+1}:t=1,2,\cdots,n\}.
+\end{gather*}
+을 가져오고, 모든 \(t\in\{2,3,\cdots,n\}\)에 대하여 위의 모델링 \eqref{modeling_on_error_term}을 적용시키겠다는 말이다.
+
+강의에서는 Durbin-Watson test에 대해 언급하면서 \(\phi_1>0\)이면 error term들이 positively autocorrelated하다고 말하고, \(\phi_1<0\)이면 negatively autocorrelated하다고 말한다.
+하지만 Durbin-Watson test보다는 autocorrelation에 대한 아래 식
+\[\rho_1(\epsilon)\rho_1(\epsilon)=\frac{\sum_{t=2}^n\epsilon_t\epsilon_{t+1}}{\sum_{t=2}^n{\epsilon_t}^2}\]
+에서 보는 게 더 편할 것 같다.
+만약 \(\phi_1>0\)이면, (\(a_t\)의 절댓값이 작을 것이므로) \(\epsilon_t\)와 \(\epsilon_{t-1}\)은 서로 같은 부호인 경우가 많을 것이다.
+그러니까 \(\epsilon_t\epsilon_{t-1}\)은 양수가 되는 경우가 많고, 그걸 다 더한 \(\rho_1(\epsilon)\) 값은 양수가 될 것이다.
+따라서 \(\epsilon\)은 postively autocorrelated하다.
+
+반대로, 만약 \(\phi_1<0\)이면, \(\epsilon_t\)와 \(\epsilon_{t-1}\)은 서로 다른 부호인 경우가 많을 것이고, \(\epsilon_t\epsilon_{t-1}\)은 음수가 되는 경우가 많다.
+따라서 \(\epsilon\)은 negatively autocorrelated하다.
+
+
+
 
 \end{document}
