@@ -99,7 +99,7 @@ MSE(\beta_0)
 먼저 \(\frac{\partial}{\partial\beta_0}MSE(\beta_0,\beta_1)=0\)를 간단히하면
 \begin{gather*}
 \frac{\partial}{\partial\beta_0}MSE(\beta_0,\beta_1)=0\\
--\frac2\sum_{t=1}^n(y_t-\beta_0-\beta_1x_t)=0\\
+-\frac2n\sum_{t=1}^n(y_t-\beta_0-\beta_1x_t)=0\\
 \sum_{t=1}^ny_t-n\beta_0-\beta_1\sum_{i=1}^nx_t=0
 \end{gather*}
 이고, \(\frac{\partial}{\partial\beta_1}MSE(\beta_0,\beta_1)=0\)를 간단히하면
@@ -545,6 +545,14 @@ trend가 선형적인 모습을 띄게 되면 seasonal swing 또한 자연스럽
 \includegraphics[width=.5\textwidth]{two_transforms}
 %\includegraphics[width=.5\textwidth]{after_transforms}
 \end{center}
+
+그런데 trend가 선형적으로 바뀐다고 해서 increasing seasonal variation 문제가 해결될 것 같지는 않아보이기도 한다. (아래 그림)
+
+\begin{center}
+\includegraphics[width=.3\textwidth]{linear_upper_and_lower_trends}
+%\includegraphics[width=.5\textwidth]{after_transforms}
+\end{center}
+
 
 
 

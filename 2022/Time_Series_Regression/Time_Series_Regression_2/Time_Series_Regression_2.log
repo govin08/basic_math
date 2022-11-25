@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 08:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,17 +686,24 @@ File: two_transforms.png Graphic file (type png)
 <use two_transforms.png>
 Package pdftex.def Info: two_transforms.png  used on input line 545.
 (pdftex.def)             Requested size: 258.75394pt x 142.98824pt.
+<linear_upper_and_lower_trends.png, id=291, 654.0435pt x 479.391pt>
+File: linear_upper_and_lower_trends.png Graphic file (type png)
+<use linear_upper_and_lower_trends.png>
+Package pdftex.def Info: linear_upper_and_lower_trends.png  used on input line 
+552.
+(pdftex.def)             Requested size: 155.25394pt x 113.79071pt.
 
-[14 <./two_transforms.png>] (./Time_Series_Regression_2.aux)
+[14 <./two_transforms.png> <./linear_upper_and_lower_trends.png>]
+(./Time_Series_Regression_2.aux)
 Package rerunfilecheck Info: File `Time_Series_Regression_2.out' has not change
 d.
 (rerunfilecheck)             Checksum: 258C0AC1DB19466C1712952EAEFE409E;3144.
  ) 
 Here is how much of TeX's memory you used:
- 12047 strings out of 475071
- 194266 string characters out of 5782908
+ 12057 strings out of 475071
+ 194647 string characters out of 5782908
  562998 words of memory out of 5000000
- 33146 multiletter control sequences out of 15000+600000
+ 33156 multiletter control sequences out of 15000+600000
  521428 words of font info for 210 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,14n,77p,511b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -817,10 +824,10 @@ pe1/public/nanumtype1/nanummjmd5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
 blic/nanumtype1/nanummjmd6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/n
 anumtype1/nanummjmd7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-supe
 r/sfrm1000.pfb>
-Output written on Time_Series_Regression_2.pdf (14 pages, 7124847 bytes).
+Output written on Time_Series_Regression_2.pdf (14 pages, 7144093 bytes).
 PDF statistics:
- 664 PDF objects out of 1000 (max. 8388607)
+ 665 PDF objects out of 1000 (max. 8388607)
  453 compressed objects within 5 object streams
  51 named destinations out of 1000 (max. 500000)
- 194 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

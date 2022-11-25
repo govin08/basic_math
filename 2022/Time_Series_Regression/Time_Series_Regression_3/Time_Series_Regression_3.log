@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  24 NOV 2022 08:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  25 NOV 2022 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -610,124 +610,123 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write4
 \openout4 = `Time_Series_Regression_3.toc'.
 
- [1
-
-{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<model_0.png, id=54, 1445.4pt x 1084.05pt>
+<model_0.png, id=25, 1445.4pt x 1084.05pt>
 File: model_0.png Graphic file (type png)
 <use model_0.png>
-Package pdftex.def Info: model_0.png  used on input line 16.
+Package pdftex.def Info: model_0.png  used on input line 33.
 (pdftex.def)             Requested size: 258.75394pt x 194.06194pt.
-<model_1-1.png, id=56, 1445.4pt x 1084.05pt>
+<model_1-1.png, id=27, 1445.4pt x 1084.05pt>
 File: model_1-1.png Graphic file (type png)
 <use model_1-1.png>
-Package pdftex.def Info: model_1-1.png  used on input line 39.
+Package pdftex.def Info: model_1-1.png  used on input line 41.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-2.png, id=57, 1445.4pt x 1084.05pt>
+<model_1-2.png, id=28, 1445.4pt x 1084.05pt>
 File: model_1-2.png Graphic file (type png)
 <use model_1-2.png>
-Package pdftex.def Info: model_1-2.png  used on input line 40.
+Package pdftex.def Info: model_1-2.png  used on input line 42.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-3.png, id=58, 1445.4pt x 1084.05pt>
+<model_1-3.png, id=29, 1445.4pt x 1084.05pt>
 File: model_1-3.png Graphic file (type png)
 <use model_1-3.png>
-Package pdftex.def Info: model_1-3.png  used on input line 41.
+Package pdftex.def Info: model_1-3.png  used on input line 43.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-4.png, id=59, 1445.4pt x 1084.05pt>
+<model_1-4.png, id=30, 1445.4pt x 1084.05pt>
 File: model_1-4.png Graphic file (type png)
 <use model_1-4.png>
-Package pdftex.def Info: model_1-4.png  used on input line 42.
+Package pdftex.def Info: model_1-4.png  used on input line 44.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-5.png, id=60, 1445.4pt x 1084.05pt>
+<model_1-5.png, id=31, 1445.4pt x 1084.05pt>
 File: model_1-5.png Graphic file (type png)
 <use model_1-5.png>
-Package pdftex.def Info: model_1-5.png  used on input line 43.
+Package pdftex.def Info: model_1-5.png  used on input line 45.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-6.png, id=61, 1445.4pt x 1084.05pt>
+<model_1-6.png, id=32, 1445.4pt x 1084.05pt>
 File: model_1-6.png Graphic file (type png)
 <use model_1-6.png>
-Package pdftex.def Info: model_1-6.png  used on input line 44.
+Package pdftex.def Info: model_1-6.png  used on input line 46.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_1-7.png, id=62, 1445.4pt x 1084.05pt>
+<model_1-7.png, id=33, 1445.4pt x 1084.05pt>
 File: model_1-7.png Graphic file (type png)
 <use model_1-7.png>
-Package pdftex.def Info: model_1-7.png  used on input line 45.
+Package pdftex.def Info: model_1-7.png  used on input line 47.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
- [2 <./model_0.png> <./model_1-1.png> <./model_1-2.png> <./model_1-3.png> <./mo
-del_1-4.png>] [3 <./model_1-5.png> <./model_1-6.png> <./model_1-7.png>]
+ [1
+
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./model_0.png>]
+ [2 <./model_1-1.png> <./model_1-2.png> <./model_1-3.png> <./model_1-4.png> <./
+model_1-5.png> <./model_1-6.png> <./model_1-7.png>] [3]
 <model_2-1.png, id=105, 1445.4pt x 1084.05pt>
 File: model_2-1.png Graphic file (type png)
 <use model_2-1.png>
-Package pdftex.def Info: model_2-1.png  used on input line 116.
+Package pdftex.def Info: model_2-1.png  used on input line 121.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
 <model_2-2.png, id=106, 1445.4pt x 1084.05pt>
 File: model_2-2.png Graphic file (type png)
 <use model_2-2.png>
-Package pdftex.def Info: model_2-2.png  used on input line 117.
+Package pdftex.def Info: model_2-2.png  used on input line 122.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
 <model_2-3.png, id=107, 1445.4pt x 1084.05pt>
 File: model_2-3.png Graphic file (type png)
 <use model_2-3.png>
-Package pdftex.def Info: model_2-3.png  used on input line 118.
+Package pdftex.def Info: model_2-3.png  used on input line 123.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
 <model_2-4.png, id=108, 1445.4pt x 1084.05pt>
 File: model_2-4.png Graphic file (type png)
 <use model_2-4.png>
-Package pdftex.def Info: model_2-4.png  used on input line 119.
+Package pdftex.def Info: model_2-4.png  used on input line 124.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
- [4]
-<model_3-1.png, id=120, 1445.4pt x 1084.05pt>
+<model_3-1.png, id=109, 1445.4pt x 1084.05pt>
 File: model_3-1.png Graphic file (type png)
 <use model_3-1.png>
-Package pdftex.def Info: model_3-1.png  used on input line 125.
+Package pdftex.def Info: model_3-1.png  used on input line 130.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-2.png, id=121, 1445.4pt x 1084.05pt>
+<model_3-2.png, id=110, 1445.4pt x 1084.05pt>
 File: model_3-2.png Graphic file (type png)
 <use model_3-2.png>
-Package pdftex.def Info: model_3-2.png  used on input line 126.
+Package pdftex.def Info: model_3-2.png  used on input line 131.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-3.png, id=122, 1445.4pt x 1084.05pt>
+<model_3-3.png, id=111, 1445.4pt x 1084.05pt>
 File: model_3-3.png Graphic file (type png)
 <use model_3-3.png>
-Package pdftex.def Info: model_3-3.png  used on input line 127.
+Package pdftex.def Info: model_3-3.png  used on input line 132.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_3-4.png, id=123, 1445.4pt x 1084.05pt>
+<model_3-4.png, id=112, 1445.4pt x 1084.05pt>
 File: model_3-4.png Graphic file (type png)
 <use model_3-4.png>
-Package pdftex.def Info: model_3-4.png  used on input line 128.
+Package pdftex.def Info: model_3-4.png  used on input line 133.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
- [5 <./model_2-1.png> <./model_2-2.png> <./model_2-3.png> <./model_2-4.png>]
-<model_4-1.png, id=132, 1445.4pt x 1084.05pt>
+ [4 <./model_2-1.png> <./model_2-2.png> <./model_2-3.png> <./model_2-4.png>]
+<model_4-1.png, id=122, 1445.4pt x 1084.05pt>
 File: model_4-1.png Graphic file (type png)
 <use model_4-1.png>
-Package pdftex.def Info: model_4-1.png  used on input line 134.
+Package pdftex.def Info: model_4-1.png  used on input line 139.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-2.png, id=133, 1445.4pt x 1084.05pt>
+<model_4-2.png, id=123, 1445.4pt x 1084.05pt>
 File: model_4-2.png Graphic file (type png)
 <use model_4-2.png>
-Package pdftex.def Info: model_4-2.png  used on input line 135.
+Package pdftex.def Info: model_4-2.png  used on input line 140.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-3.png, id=134, 1445.4pt x 1084.05pt>
+<model_4-3.png, id=124, 1445.4pt x 1084.05pt>
 File: model_4-3.png Graphic file (type png)
 <use model_4-3.png>
-Package pdftex.def Info: model_4-3.png  used on input line 136.
+Package pdftex.def Info: model_4-3.png  used on input line 141.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-4.png, id=135, 1445.4pt x 1084.05pt>
+<model_4-4.png, id=125, 1445.4pt x 1084.05pt>
 File: model_4-4.png Graphic file (type png)
 <use model_4-4.png>
-Package pdftex.def Info: model_4-4.png  used on input line 137.
+Package pdftex.def Info: model_4-4.png  used on input line 142.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-5.png, id=136, 1445.4pt x 1084.05pt>
+<model_4-5.png, id=126, 1445.4pt x 1084.05pt>
 File: model_4-5.png Graphic file (type png)
 <use model_4-5.png>
-Package pdftex.def Info: model_4-5.png  used on input line 138.
+Package pdftex.def Info: model_4-5.png  used on input line 143.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<model_4-6.png, id=137, 1445.4pt x 1084.05pt>
+<model_4-6.png, id=127, 1445.4pt x 1084.05pt>
 File: model_4-6.png Graphic file (type png)
 <use model_4-6.png>
-Package pdftex.def Info: model_4-6.png  used on input line 139.
+Package pdftex.def Info: model_4-6.png  used on input line 144.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
- [6 <./model_3-1.png> <./model_3-2.png> <./model_3-3.png> <./model_3-4.png>] [7
+ [5 <./model_3-1.png> <./model_3-2.png> <./model_3-3.png> <./model_3-4.png>] [6
  <./model_4-1.png> <./model_4-2.png> <./model_4-3.png> <./model_4-4.png> <./mod
 el_4-5.png> <./model_4-6.png>] (./Time_Series_Regression_3.aux)
 Package rerunfilecheck Info: File `Time_Series_Regression_3.out' has not change
@@ -735,69 +734,61 @@ d.
 (rerunfilecheck)             Checksum: 42C8BFFDA5BAC58984BADCA5CFB38400;668.
  ) 
 Here is how much of TeX's memory you used:
- 12290 strings out of 475071
- 197214 string characters out of 5782908
- 558086 words of memory out of 5000000
- 33449 multiletter control sequences out of 15000+600000
- 494924 words of font info for 120 fonts, out of 8000000 for 9000
+ 12286 strings out of 475071
+ 197166 string characters out of 5782908
+ 560086 words of memory out of 5000000
+ 33448 multiletter control sequences out of 15000+600000
+ 494636 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,11n,77p,511b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/texli
-ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
-pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/te
-xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
-nanummjmac.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
-jmad.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.p
-fb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb><c:
-/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb><c:/texli
-ve/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><c:/texlive/202
-2/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><c:/texlive/2022/texm
-f-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/nanumtype1/nanummjmb5.pfb><c:/texlive/2022/texmf-dist/fonts
-/type1/public/nanumtype1/nanummjmb6.pfb><c:/texlive/2022/texmf-dist/fonts/type1
-/public/nanumtype1/nanummjmb7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
-c/nanumtype1/nanummjmb8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanu
-mtype1/nanummjmb9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1
-/nanummjmba.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
-mjmbb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.
-pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb><c
-:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb><c:/texl
-ive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb><c:/texlive/20
-22/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb><c:/texlive/2022/tex
-mf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb><c:/texlive/2022/texmf-dis
-t/fonts/type1/public/nanumtype1/nanummjmc5.pfb><c:/texlive/2022/texmf-dist/font
-s/type1/public/nanumtype1/nanummjmc6.pfb><c:/texlive/2022/texmf-dist/fonts/type
-1/public/nanumtype1/nanummjmc7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
-ic/nanumtype1/nanummjmc8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nan
-umtype1/nanummjmc9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
-1/nanummjmcb.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
-mmjmcc.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd
-.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb><
-c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb><c:/tex
-live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb><c:/texlive/2
-022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb><c:/texlive/2022/te
-xmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb><c:/texlive/2022/texmf-di
-st/fonts/type1/public/nanumtype1/nanummjmd4.pfb><c:/texlive/2022/texmf-dist/fon
-ts/type1/public/nanumtype1/nanummjmd5.pfb><c:/texlive/2022/texmf-dist/fonts/typ
-e1/public/nanumtype1/nanummjmd6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1000.pfb>
-Output written on Time_Series_Regression_3.pdf (7 pages, 9201734 bytes).
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/
+texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/202
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-d
+ist/fonts/type1/public/nanumtype1/nanummjmac.pfb><c:/texlive/2022/texmf-dist/fo
+nts/type1/public/nanumtype1/nanummjmad.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/nanumtype1/nanummjmae.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
+blic/nanumtype1/nanummjmb0.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/n
+anumtype1/nanummjmb1.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumty
+pe1/nanummjmb2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
+nummjmb3.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
+b4.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb
+><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb><c:/t
+exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb><c:/texlive
+/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb><c:/texlive/2022/
+texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb><c:/texlive/2022/texmf-
+dist/fonts/type1/public/nanumtype1/nanummjmba.pfb><c:/texlive/2022/texmf-dist/f
+onts/type1/public/nanumtype1/nanummjmbb.pfb><c:/texlive/2022/texmf-dist/fonts/t
+ype1/public/nanumtype1/nanummjmbc.pfb><c:/texlive/2022/texmf-dist/fonts/type1/p
+ublic/nanumtype1/nanummjmbd.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
+nanumtype1/nanummjmbe.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumt
+ype1/nanummjmc0.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
+anummjmc1.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
+mc2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pf
+b><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb><c:/
+texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb><c:/texliv
+e/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb><c:/texlive/2022/texmf
+-dist/fonts/type1/public/nanumtype1/nanummjmcb.pfb><c:/texlive/2022/texmf-dist/
+fonts/type1/public/nanumtype1/nanummjmcc.pfb><c:/texlive/2022/texmf-dist/fonts/
+type1/public/nanumtype1/nanummjmcd.pfb><c:/texlive/2022/texmf-dist/fonts/type1/
+public/nanumtype1/nanummjmce.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
+/nanumtype1/nanummjmd1.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanum
+type1/nanummjmd2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/
+nanummjmd3.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanumm
+jmd4.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.p
+fb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb><c:
+/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Time_Series_Regression_3.pdf (6 pages, 9145338 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 215 compressed objects within 3 object streams
- 16 named destinations out of 1000 (max. 500000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 14 named destinations out of 1000 (max. 500000)
  143 words of extra memory for PDF output out of 10000 (max. 10000000)
 
