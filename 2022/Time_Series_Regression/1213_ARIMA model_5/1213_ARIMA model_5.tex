@@ -103,7 +103,8 @@ X_t
 \end{equation}
 where he use the formula for geometric series.\footnotemark
 \footnotetext{An alternative way to equate \((1-\phi B)^{-1}\) and \(1+\phi B+\phi^2B^2+\cdots\) is illustrated in Shumway's book.
-See appendix.}
+In this book, he considers the inverse operator \(\phi^{-1}(B)\) of \(\phi(B)=1-\phi B\).
+See equations (3.6), (3.12), (3.13), (3.14).}
 As a result, \(X_t\) is expressed as a (infinite) linear combination of \(a_{t-h}\) for \(h=0,1,2,\cdots\).
 
 %
@@ -159,7 +160,7 @@ and take the expectation on both sides to get\footnotemark ;
 Covariance의 정의는 \(\cov(X,Y)=\mathbb E[(X-\mathbb[X])(Y-\mathbb[Y])]\)인데 마치 \(\cov(X,Y)=\mathbb E[XY]\)인 것처럼 쓰고 있다.
 Shumway의 책에서는 \(x_t\)의 평균이 0임을 가정하고 있다.
 \(x_t\)의 평균이 0이 아닐 경우 평균 \(\mu\)를 뺀 \(x_t-\mu\)를 고려하라고 되어 있다.
-(p. 86)
+See p. 86, Definition 3.1.
 }
 \begin{equation}\label{gamma}
 \begin{aligned}
@@ -311,8 +312,7 @@ The equation \eqref{ar_p2} can be expressed as
 If the inverse operator \(\phi^{-1}(B)\) of \(\phi(B)\) exists\footnotemark, the above equation goes
 \[X_t=\phi^{-1}(B)a_t.\]
 \footnotetext{actually, it exists if \(|\phi|<1\) whose explicit form is written in \eqref{geometric_series}.
-The way of geometric series doesn't seem to be rigorous.
-Shumway explain an alternative way in section 3.2.}
+See equations (3.6), (3.12), (3.13), (3.14) in Shumway's book.}
 Here is a comment by the professor, summarizing the above equation :
 \begin{quote}
 AR process can be thought of as making the output \(X_t\) from a linear filter with transfer function \(\phi^{-1}(B)\) when the input is a white noise \(a_t\).
@@ -354,4 +354,18 @@ Taking the inverse \(\phi^{-1}(B)\) of \(\phi(B)\) on both sides yields
 \begin{equation}\label{arma_pq2}
 X_t=\phi^{-1}(B)\theta(B)a_t.
 \end{equation}
+
+\addcontentsline{toc}{section}{related pages in Shumway's book}
+%%
+\section*{related pages in Shumway's book}
+\centering\includegraphics[width=.9\textwidth]{shumway1}
+\newpage\includegraphics[width=.9\textwidth]{shumway2}
+\newpage\includegraphics[width=.9\textwidth]{shumway3}
+\newpage\includegraphics[width=.9\textwidth]{shumway4}
+\newpage\includegraphics[width=.9\textwidth]{shumway5}
+\newpage\includegraphics[width=.9\textwidth]{shumway6}
+\newpage\includegraphics[width=.9\textwidth]{shumway7}
+\newpage\includegraphics[width=.9\textwidth]{shumway8}
+\newpage\includegraphics[width=.9\textwidth]{shumway9}
+\newpage\includegraphics[width=.9\textwidth]{shumway10}
 \end{document}

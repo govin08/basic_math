@@ -10,3 +10,4 @@
 \contentsline {subsection}{\numberline {3.1}AR model}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}MA model}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}ARMA model}{8}{subsection.3.3}%
+\contentsline {section}{related pages in Shumway's book}{8}{equation.3.31}%

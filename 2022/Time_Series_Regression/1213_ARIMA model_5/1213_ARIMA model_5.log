@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  13 DEC 2022 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  13 DEC 2022 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,37 +616,37 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<capture1.png, id=97, 642.4pt x 481.8pt>
+<capture1.png, id=102, 642.4pt x 481.8pt>
 File: capture1.png Graphic file (type png)
 <use capture1.png>
 Package pdftex.def Info: capture1.png  used on input line 23.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture2.png, id=99, 642.4pt x 481.8pt>
+<capture2.png, id=104, 642.4pt x 481.8pt>
 File: capture2.png Graphic file (type png)
 <use capture2.png>
 Package pdftex.def Info: capture2.png  used on input line 24.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture3.png, id=100, 642.4pt x 481.8pt>
+<capture3.png, id=105, 642.4pt x 481.8pt>
 File: capture3.png Graphic file (type png)
 <use capture3.png>
 Package pdftex.def Info: capture3.png  used on input line 25.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture4.png, id=101, 1445.4pt x 1084.05pt>
+<capture4.png, id=106, 1445.4pt x 1084.05pt>
 File: capture4.png Graphic file (type png)
 <use capture4.png>
 Package pdftex.def Info: capture4.png  used on input line 26.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture5.png, id=102, 1445.4pt x 1084.05pt>
+<capture5.png, id=107, 1445.4pt x 1084.05pt>
 File: capture5.png Graphic file (type png)
 <use capture5.png>
 Package pdftex.def Info: capture5.png  used on input line 27.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture6.png, id=103, 1445.4pt x 1084.05pt>
+<capture6.png, id=108, 1445.4pt x 1084.05pt>
 File: capture6.png Graphic file (type png)
 <use capture6.png>
 Package pdftex.def Info: capture6.png  used on input line 28.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture7.png, id=104, 1445.4pt x 1084.05pt>
+<capture7.png, id=109, 1445.4pt x 1084.05pt>
 File: capture7.png Graphic file (type png)
 <use capture7.png>
 Package pdftex.def Info: capture7.png  used on input line 29.
@@ -665,67 +665,140 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 110.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 134.
+(hyperref)                removing `math shift' on input line 135.
 
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 174.
+(hyperref)                removing `math shift' on input line 175.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 174.
+(hyperref)                removing `math shift' on input line 175.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 174.
+(hyperref)                removing `\gamma' on input line 175.
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 214.
+(hyperref)                removing `math shift' on input line 215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 214.
+(hyperref)                removing `math shift' on input line 215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 214.
+(hyperref)                removing `\gamma' on input line 215.
 
 [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 258.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ge' on input line 258.
+(hyperref)                removing `\ge' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 258.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 258.
+(hyperref)                removing `\gamma' on input line 259.
 
-[7] [8] (./1213_ARIMA model_5.aux)
+[7]
+<shumway1.png, id=224, 268.6035pt x 415.5525pt>
+File: shumway1.png Graphic file (type png)
+<use shumway1.png>
+Package pdftex.def Info: shumway1.png  used on input line 361.
+(pdftex.def)             Requested size: 465.75392pt x 720.5826pt.
+ [8] [9 <./shumway1.png>]
+<shumway2.png, id=244, 258.9675pt x 423.984pt>
+File: shumway2.png Graphic file (type png)
+<use shumway2.png>
+Package pdftex.def Info: shumway2.png  used on input line 362.
+(pdftex.def)             Requested size: 465.75392pt x 762.62068pt.
+ [10 <./shumway2.png>]
+<shumway3.png, id=249, 257.763pt x 420.3705pt>
+File: shumway3.png Graphic file (type png)
+<use shumway3.png>
+Package pdftex.def Info: shumway3.png  used on input line 363.
+(pdftex.def)             Requested size: 465.75392pt x 759.6041pt.
+ [11 <./shumway3.png>]
+<shumway4.png, id=254, 255.95625pt x 417.9615pt>
+File: shumway4.png Graphic file (type png)
+<use shumway4.png>
+Package pdftex.def Info: shumway4.png  used on input line 364.
+(pdftex.def)             Requested size: 465.75392pt x 760.60184pt.
+
+[12 <./shumway4.png>]
+<shumway5.png, id=259, 252.34274pt x 420.97275pt>
+File: shumway5.png Graphic file (type png)
+<use shumway5.png>
+Package pdftex.def Info: shumway5.png  used on input line 365.
+(pdftex.def)             Requested size: 465.75392pt x 777.08514pt.
+
+Overfull \vbox (12.0383pt too high) has occurred while \output is active []
+
+
+[13 <./shumway5.png>]
+<shumway6.png, id=265, 254.75175pt x 419.166pt>
+File: shumway6.png Graphic file (type png)
+<use shumway6.png>
+Package pdftex.def Info: shumway6.png  used on input line 366.
+(pdftex.def)             Requested size: 465.75392pt x 766.34993pt.
+
+Overfull \vbox (1.30309pt too high) has occurred while \output is active []
+
+
+[14 <./shumway6.png>]
+<shumway7.png, id=270, 266.79675pt x 412.54124pt>
+File: shumway7.png Graphic file (type png)
+<use shumway7.png>
+Package pdftex.def Info: shumway7.png  used on input line 367.
+(pdftex.def)             Requested size: 465.75392pt x 720.22061pt.
+ [15 <./shumway7.png>]
+<shumway8.png, id=275, 260.77425pt x 420.3705pt>
+File: shumway8.png Graphic file (type png)
+<use shumway8.png>
+Package pdftex.def Info: shumway8.png  used on input line 368.
+(pdftex.def)             Requested size: 465.75392pt x 750.86136pt.
+ [16 <./shumway8.png>]
+<shumway9.png, id=280, 252.34274pt x 417.9615pt>
+File: shumway9.png Graphic file (type png)
+<use shumway9.png>
+Package pdftex.def Info: shumway9.png  used on input line 369.
+(pdftex.def)             Requested size: 465.75392pt x 771.52663pt.
+
+Overfull \vbox (6.47978pt too high) has occurred while \output is active []
+
+
+[17 <./shumway9.png>]
+<shumway10.png, id=285, 261.97874pt x 416.757pt>
+File: shumway10.png Graphic file (type png)
+<use shumway10.png>
+Package pdftex.def Info: shumway10.png  used on input line 370.
+(pdftex.def)             Requested size: 465.75392pt x 740.94756pt.
+ [18 <./shumway10.png>] (./1213_ARIMA model_5.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"1213_ARIMA model_5".out' has not changed.
-(rerunfilecheck)             Checksum: A3D0092A057B5F6492B0D51A3F10207B;2104.
+(rerunfilecheck)             Checksum: 46D4959448DA90DADC082087A97A0531;2319.
  ) 
 Here is how much of TeX's memory you used:
- 12207 strings out of 475071
- 194940 string characters out of 5782908
- 563729 words of memory out of 5000000
- 33333 multiletter control sequences out of 15000+600000
+ 12319 strings out of 475071
+ 196754 string characters out of 5782908
+ 563731 words of memory out of 5000000
+ 33434 multiletter control sequences out of 15000+600000
  492729 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,10n,77p,507b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -794,10 +867,10 @@ e1/public/nanumtype1/nanummjmce.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
 lic/nanumtype1/nanummjmd2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/na
 numtype1/nanummjmd3.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
 e1/nanummjmd5.pfb>
-Output written on "1213_ARIMA model_5.pdf" (8 pages, 4442456 bytes).
+Output written on "1213_ARIMA model_5.pdf" (18 pages, 5150403 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 58 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 508 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
