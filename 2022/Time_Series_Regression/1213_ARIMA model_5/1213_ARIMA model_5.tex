@@ -15,6 +15,7 @@
 \maketitle
 
 이것은 \href{https://youtu.be/K7GWJ3iC6OY}{ARIMA 모델 개요 - Part 5} 강의에 대한 노트이다.
+이전과는 다르게 영어로 작성해보았다.
 \tableofcontents
 
 \newpage
@@ -30,49 +31,69 @@
 
 %%
 \section{Backward shift operator \(B\)}
-\(B\) is called the \emph{backward shift operator}.
-It is a function that maps a random variable which depends on time (i.e. \(X_t\) or \(a_t\), backward by one step.
+An operator \(B\) is called the \emph{backward shift operator}.
+It is a function that maps a random variable which depends on time (i.e. \(X_t\) or \(a_t\)), backward by one step.
 \begin{equation}\label{bso}
 B(X_t)=X_{t-1}
 \end{equation}
 We occasionally write \(B X_t\) instead of \(B(X_t)\) to stand for the same thing.
-Note that
+Denoting \(B^m=B\circ B\circ\cdots\circ B\) by the \(m\) times composition of \(B\), we have
 \begin{align*}
 B X_t &= X_{t-1}\\
 B^2 X_t &= X_{t-2}\\
 &\vdots\\
-B^m X_t&=X_{t-m}
+B^m X_t&=X_{t-m}.
 \end{align*}
-for any positive integer \(m\).
+The professor tries to explain \ar(1) model and \ar(2) model in terms of this operator \(B\), which is illustrated as follows.
 
 %
 \subsection{AR(1) model described by \(B\)}
 Recall that \ar(1) is called the \emph{autoregressive model} of order 1, which predict \(X_t\) by means of \(X_{t-1}\) and \(a_t\).
 \begin{equation}\label{ar1}
-X_t=\phi X_{t-1}+a_t
+X_t=\phi X_{t-1}+a_t.
 \end{equation}
-\(a_t\) is a white noise so that the expectation of \(a_t\) is 0
+Here, \(a_t\) is a white noise so that the expectation of \(a_t\) is 0 ;
 \begin{equation}\label{white_noise_1}
-\mathbb E(a_t)=0,
+\mathbb E[a_t]=0,
 \end{equation}
-the variance of \(a_t\) is independent of \(t\)
+the variance of \(a_t\) is independent of \(t\) ;
 \begin{equation}\label{white_noise_2}
-\mathbb V(a_t)={\sigma_a}^2
+\mathbb V[a_t]=\sa,
 \end{equation}
-and \(a_t\)'s in distinct timsteps are independent
+and \(a_t\)'s in distinct timsteps are independent one another ;
 \begin{equation}\label{white_noise_3}
 \cov(a_t,a_{t+h})=0\quad\text{for}\quad h\neq0.
 \end{equation}
+Recall that \(\mathbb V[X]=\mathbb E[X^2]-(\mathbb E[X])^2\) for any random variable \(X\).
+By \eqref{white_noise_1} and \eqref{white_noise_2},
+\begin{equation}\label{white_noise_4}
+\mathbb E[{a_t}^2]=\mathbb V[a_t]+(\mathbb E[a_t])^2=\sa+0^2=\sa.
+\end{equation}
+Moreover, by \eqref{white_noise_1} and \eqref{white_noise_3},
+\begin{equation}\label{white_noise_5}
+\mathbb E[a_ta_s]=\mathbb E[(a_t-\mathbb E[a_t])(a_s-\mathbb E[a_s])]=\cov(a_t,a_s)=0
+\end{equation}
+if \(t\neq s\).
+Summarizing the above two equations (\eqref{white_noise_4} and \eqref{white_noise_5}) yields
+\begin{equation}\label{white_noise_6}
+\mathbb E[a_ta_s]=
+\begin{cases}
+\sa&(t=s)\\
+0&(t\ne s)
+\end{cases}
+\end{equation}
 
-We can rewrite the above equation as
+
+We can rewrite the equation \eqref{ar1} as
 \begin{gather*}
 X_t=\phi B X_t+a_t\\
 (1-\phi B)X_t=a_t
 \end{gather*}
-whrere \(1-\phi B\) can be thought of as an oprator, which maps \(X_t\) to \(X_t-\phi BX_t\).
-But, I think the professor think of \(1-\phi B\) as a `1 minus a real number \(\phi B\).
+where \(1-\phi B\) can be thought of as an oprator, which maps \(X_t\) to \(X_t-\phi BX_t\).
+Here, \(1\) should be viewed as a identity operator.
+But, I think the professor regard \(1-\phi B\) as a `1 minus a real number \(\phi B\).
 Moreover, he assumes that \(|\phi B|<1\) in that
-\begin{equation}\label{geomteric_series}
+\begin{equation}\label{geometric_series}
 \begin{aligned}
 X_t
 &=\frac1{1-\phi B}a_t\\
@@ -80,8 +101,9 @@ X_t
 &=a_t+\phi a_{t-1}+\phi^2a_{t-2}+\cdots.
 \end{aligned}
 \end{equation}
-where he use the formula for geometric series.
-
+where he use the formula for geometric series.\footnotemark
+\footnotetext{An alternative way to equate \((1-\phi B)^{-1}\) and \(1+\phi B+\phi^2B^2+\cdots\) is illustrated in Shumway's book.
+See appendix.}
 As a result, \(X_t\) is expressed as a (infinite) linear combination of \(a_{t-h}\) for \(h=0,1,2,\cdots\).
 
 %
@@ -95,8 +117,8 @@ Using the backward shift operator \(B\), we get
 X_t=\phi_1BX_t+\phi_2B^2X_t+a_t\\
 (1-\phi_1B-\phi_2B^2)X_t=a_t
 \end{gather*}
-Again, regarding \(B\) as a real number, \(1-\phi_1B-\phi_2B^2\) can be thought of as a quadratic polynomial.
-So there exists numbers\footnote{real numbers if \(D=b^2-4ac=(-\phi_1)^2-4\cdot(-\phi_2)\cdot1>0\). but in general, they are complex numbers} \(\alpha_1\) and \(\alpha_2\) such that (\(\alpha_1+\alpha_2=\phi_1\), \(\alpha_1\alpha_2=-\phi_2\))
+Again, regarding \(B\) as a real number, \(1-\phi_1B-\phi_2B^2\) can be thought of as a quadratic polynomial of \(B\).
+So there exists numbers\footnote{real numbers if \(D=b^2-4ac=(-\phi_1)^2-4\cdot(-\phi_2)\cdot1={\phi_1}^2+4\phi_2>0\). but in general, they are complex numbers} \(\alpha_1\) and \(\alpha_2\) such that (\(\alpha_1+\alpha_2=\phi_1\), \(\alpha_1\alpha_2=-\phi_2\))
 \[1-\phi_1B-\phi_2B^2=(1-\alpha_1B)(1-\alpha_2B).\]
 Thus,
 \begin{align*}
@@ -129,9 +151,8 @@ We are assuming that \(X_t\) is obtained from \(X_{t-1}\), \(a_t\) and \(a_{t-1}
 \begin{equation}\label{arma(1,1)}
 X_t=\phi X_{t-1}+a_t+\theta a_{t-1}.
 \end{equation}
-Here, we compute the covariance function of this model for \(h=0,1,2,\cdots\).
-
-To get the autocovariance function \(\gamma(h)=\cov(X_t,X_{t-h})\), multiply \eqref{arma(1,1)} by \(X_{t-h}\) on both sides 
+Here, we compute the covariance \(\gamma(h)=\cov(X_t,X_{t-h})\) of this model for \(h=0,1,2,\cdots\).
+To this aim, multiply \eqref{arma(1,1)} by \(X_{t-h}\) on both sides 
 \[X_tX_{t-h}=\phi X_{t-1}X_{t-h}+a_tX_{t-h}+\theta a_{t-1}X_{t-h}\]
 and take the expectation on both sides to get\footnotemark ;
 \footnotetext{여기에서 \(\mathbb E[X_t]=\mathbb E[X_{t-h}]=0\)임을 가정하고 있는 것일까?
@@ -163,59 +184,62 @@ X_t&=\frac1{1-\phi B}(a_t+\theta a_{t-1})\\
 &=a_t+\psi_1a_{t-1}+\psi_2a_{t-2}+\cdots
 \end{aligned}
 \end{equation}
-By \eqref{arma(1,1)_converted} the second term and the third term of \eqref{gamma} are evalauted as
+By \eqref{arma(1,1)_converted}, the second term and the third term of \eqref{gamma} are evalauted as
 \begin{align*}
 \mathbb E[a_tX_t]
 &=\mathbb E[a_t(a_t+\psi_1a_{t-1}+\psi_2a_{t-2}+\cdots)]\\
 &=\mathbb E[{a_t}^2]+\psi_1\mathbb E[a_ta_{t-1}]+\psi_2\mathbb E[a_ta_{t-2}]+\cdots\\
-&={\sigma_a}^2+0+0+\cdots={\sigma_a}^2,
+&=\sa+0+0+\cdots=\sa,
 \end{align*}
 and
 \begin{align*}
 \theta\mathbb E[a_{t-1}X_t]
 &=\theta\mathbb E[a_{t-1}(a_t+\psi_1a_{t-1}+\psi_2a_{t-2}+\cdots)]\\
 &=\theta\left(\mathbb E[a_{t-1}a_t]+\psi_1\mathbb E[{a_{t-1}}^2]+\psi_2\mathbb E[a_{t-1}a_{t-2}]+\cdots\right)\\
-&=\theta\left(0+\psi_1{\sigma_a}^2+0+\cdots\right)\\
-&=\theta\psi_1{\sigma_a}^2,
+&=\theta\left(0+\psi_1\sa+0+\cdots\right)\\
+&=\theta\psi_1\sa,
 \end{align*}
-where we used \eqref{white_noise_1}, \eqref{white_noise_2} and \eqref{white_noise_3} in the computations.
+where we used \eqref{white_noise_6} in the computations.
 Therefore, the autocovariance function of \arma(1,1) when \(h=0\) is
 \begin{equation}\label{gamma0}
 \begin{aligned}
 \gamma(0)
-&=\phi\cov(X_{t-1}, X_t)+{\sigma_a}^2+\theta\psi_1{\sigma_a}^2\\
-&=\phi\gamma(1)+{\sigma_a}^2+\theta(\theta+\phi){\sigma_a}^2,
+&=\phi\cov(X_{t-1}, X_t)+\sa+\theta\psi_1\sa\\
+&=\phi\gamma(1)+(1+\theta^2+\theta\phi)\sa,
 \end{aligned}
 \end{equation}
-which is also the variance of the variance of the \arma(1,1) model.
+which is also the variance \(\mathbb V(X_t)\) of the \arma(1,1) model.
 
 %
 \subsection{autocovariance for \(h=1\) : \(\gamma(1)\)}\label{h1}
 Suppose \(h=1\).
 The equation \eqref{arma(1,1)} applied to \(t-1\) yields
-\begin{gather*}
-X_{t-1}=\phi X_{t-2}+a_{t-1}+\theta a_{t-2}\\
-X_{t-1}=\phi BX_{t-1}+a_{t-1}\\
-(1-\phi B)X_{t-1}=a_{t-1}\\
-X_{t-1}=(1+\phi B+\phi^2B^2+\cdots)a_{t-1}.
-\end{gather*}
-Plugging \(h=1\) and the above equation into \eqref{gamma} yield
+\begin{align*}
+X_{t-1}&=\phi X_{t-2}+a_{t-1}+\theta a_{t-2}\\
+X_{t-1}&=\phi BX_{t-1}+a_{t-1}+\theta a_{t-2}\\
+(1-\phi B)X_{t-1}&=a_{t-1}+\theta a_{t-2}\\
+X_{t-1}&=(1+\phi B+\phi^2B^2+\cdots)(a_{t-1}+\theta a_{t-2})\\
+&=a_{t-1}+\psi_1a_{t-2}+\psi_2a_{t-3}+\cdots
+\end{align*}
+for the same \(\psi_{t-h}\) (\(h=1,2,\cdots\)).
+Plugging \(h=1\) and the above equation into \eqref{gamma},
 \begin{equation}\label{gamma1}
 \begin{aligned}
 \gamma(1)
 &=\phi\cov(X_{t-1},X_{t-1})+\mathbb E[a_tX_{t-1}]+\theta\mathbb E[a_{t-1}X_{t-1}]\\
-&=\phi\gamma(0)+\mathbb E[a_t(a_{t-1}+\phi a_{t-2}+\phi^2a_{t-3}+\cdots)]+\theta\mathbb E[a_{t-1}(a_{t-1}+\phi a_{t-2}+\phi^2a_{t-3}+\cdots)]\\
-&=\phi\gamma(0)+0+\theta\times{\sigma_a}^2\\
-&=\phi\gamma(0)+\theta{\sigma_a}^2.
+&=\phi\gamma(0)+\mathbb E[a_t(a_{t-1}+\psi_1a_{t-2}+\psi_2a_{t-3}+\cdots)]+\theta\mathbb E[a_{t-1}(a_{t-1}+\psi_1a_{t-2}+\psi_2a_{t-3}+\cdots)]\\
+&=\phi\gamma(0)+0+\theta\times\sa\\
+&=\phi\gamma(0)+\theta\sa
 \end{aligned}
 \end{equation}
+by repeated uses of \eqref{white_noise_6}.
 
 As a result, we get a system of linear equations \eqref{gamma0} and \eqref{gamma1} with unknowns \(\gamma(0)\) and \(\gamma(1)\).
 Solving the system by substitution yields
 \begin{align*}
 \gamma(0)
-&=\phi\gamma(1)+\sa+\theta(\phi+\theta)\sa\\
-&=\phi\gamma(0)+\phi\theta\sa+\sa+\theta(\phi+\theta)\sa
+&=\phi\gamma(1)+(1+\theta^2+\theta\phi)\sa\\
+&=\phi^2\gamma(0)+(1+2\theta\phi+\theta^2)\sa
 \end{align*}
 \begin{equation}\label{h0_}
 \gamma(0)=\frac{1+2\theta\phi+\theta^2}{1-\phi^2}\sa
@@ -223,8 +247,8 @@ Solving the system by substitution yields
 and
 \begin{align*}
 \gamma(1)
-&=\theta\gamma(0)+\theta\sa\\
-&=\phi^2\gamma(1)+\phi\sa+\theta\phi(\phi+\theta)\sa+\theta\sa
+&=\phi\gamma(0)+\theta\sa\\
+&=\phi^2\gamma(1)+(\phi+\phi\theta^2+\phi^2\theta+\theta)\sa
 \end{align*}
 \begin{equation}\label{h1_}
 \gamma(1)=\frac{\phi+\theta\phi^2+\theta^2\phi+\theta}{1-\phi^2}\sa=\frac{(\phi+\theta)(1+\phi\theta)}{1-\phi^2}\sa
@@ -234,16 +258,21 @@ and
 \subsection{autocovariance for \(h\ge2\) : \(\gamma(h)\)}\label{h2}
 By the similar reasoning as in \ref{h0} and \ref{h1},
 we have
-\[X_{t-h}=(1+\phi B+\phi^2B^2+\cdots)a_{t-h}.\]
+\begin{align*}
+X_{t-h}
+&=(1+\phi B+\phi^2B^2+\cdots)(a_{t-h}+\theta a_{t-h-1})\\
+&=a_{t-h}+\psi_1a_{t-h-1}+\psi_2a_{t-h-2}+\cdots
+\end{align*}
 Substituting the above equation to \eqref{gamma} yields
 \begin{equation}\label{reccurence_formula}
 \begin{aligned}
 \gamma(h)
 &=\phi\cov(X_{t-1},X_{t-h})+\mathbb E[a_tX_{t-h}]+\theta\mathbb E[a_{t-1}X_{t-h}]\\
-&=\phi\gamma(h-1)+\mathbb E[a_t(a_{t-h}+\phi a_{t-h-1}+\phi^2a_{t-h-2}+\cdots)]+\theta\mathbb E[a_{t-1}(a_{t-h}+\phi a_{t-h-1}+\phi^2a_{t-h-2}+\cdots)]\\
+&=\phi\gamma(h-1)+\mathbb E[a_t(a_{t-h}+\psi_1a_{t-h-1}+\psi_2a_{t-h-2}+\cdots)]+\theta\mathbb E[a_{t-1}(a_{t-h}+\psi_1a_{t-h-1}+\psi_2a_{t-h-2}+\cdots)]\\
 &=\phi\gamma(h-1).
 \end{aligned}
 \end{equation}
+Here, all the terms of the form \(\mathbb E[a_ta_{t-l}]\) or \(\mathbb E[a_{t-1}a_{t-l}]\) has vanished since \(h\ge2\).
 Using induction on the above reccurence formula \eqref{reccurence_formula}, we have \(\gamma(h)=\phi^{h-1}\gamma(1)\) for \(h\ge2\).
 Combined with \eqref{h0_} and \eqref{h1_}, we get
 \begin{equation}\label{gammah}
@@ -253,7 +282,7 @@ Combined with \eqref{h0_} and \eqref{h1_}, we get
 \frac{(\phi+\theta)(1+\phi\theta)\phi^{h-1}}{1-\phi^2}\sa&(h\ge1)
 \end{cases}
 \end{equation}
-Since \(\gamma(-h)=\gamma(h)\). equation \eqref{gammah} is the explicit formula of \(\gamma(h)\) for all integers \(h\).
+Since \(\gamma(-h)=\gamma(h)\), equation \eqref{gammah} is the explicit formula of \(\gamma(h)\) for all integers \(h\).
 
 %%
 \section{AR, MA and ARMA described by operators}
@@ -274,7 +303,7 @@ We denote
 \begin{equation}\label{ar_p3}
 \phi(B)=1-\phi B-\phi^2B^2-\cdots-\phi^pB^p,
 \end{equation}
-so that \(\phi(B)\) is an operator (a polynomial of operator \(B\)) acting on a random variable, where \(1\) should be regarded as the identity operator.
+so that \(\phi(B)\) is an operator (a polynomial of operator \(B\)) acting on a random variable.
 The equation \eqref{ar_p2} can be expressed as
 \begin{equation}\label{ar_p4}
 \phi(B)X_t=a_t
@@ -297,7 +326,7 @@ X_t=a_t-\theta_1a_{t-1}-\theta_2a_{t-2}-\cdots-\theta_qa_{t-q}.
 \end{equation}
 \footnotetext{Note that the professor wrote minus sign instead of plus sign.
 The choice of signs are irrelavant of the context.
-Confer to the second footnote at page 90, in Shumway's book}
+Confer to the second footnote at page 90, in Shumway's book.}
 
 We have
 \begin{align}

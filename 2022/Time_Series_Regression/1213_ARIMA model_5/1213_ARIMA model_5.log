@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  13 DEC 2022 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  13 DEC 2022 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,112 +616,105 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<capture1.png, id=96, 642.4pt x 481.8pt>
+<capture1.png, id=97, 642.4pt x 481.8pt>
 File: capture1.png Graphic file (type png)
 <use capture1.png>
-Package pdftex.def Info: capture1.png  used on input line 22.
+Package pdftex.def Info: capture1.png  used on input line 23.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture2.png, id=98, 642.4pt x 481.8pt>
+<capture2.png, id=99, 642.4pt x 481.8pt>
 File: capture2.png Graphic file (type png)
 <use capture2.png>
-Package pdftex.def Info: capture2.png  used on input line 23.
+Package pdftex.def Info: capture2.png  used on input line 24.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture3.png, id=99, 642.4pt x 481.8pt>
+<capture3.png, id=100, 642.4pt x 481.8pt>
 File: capture3.png Graphic file (type png)
 <use capture3.png>
-Package pdftex.def Info: capture3.png  used on input line 24.
+Package pdftex.def Info: capture3.png  used on input line 25.
 (pdftex.def)             Requested size: 232.87695pt x 174.65353pt.
-<capture4.png, id=100, 1445.4pt x 1084.05pt>
+<capture4.png, id=101, 1445.4pt x 1084.05pt>
 File: capture4.png Graphic file (type png)
 <use capture4.png>
-Package pdftex.def Info: capture4.png  used on input line 25.
+Package pdftex.def Info: capture4.png  used on input line 26.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture5.png, id=101, 1445.4pt x 1084.05pt>
+<capture5.png, id=102, 1445.4pt x 1084.05pt>
 File: capture5.png Graphic file (type png)
 <use capture5.png>
-Package pdftex.def Info: capture5.png  used on input line 26.
+Package pdftex.def Info: capture5.png  used on input line 27.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture6.png, id=102, 1445.4pt x 1084.05pt>
+<capture6.png, id=103, 1445.4pt x 1084.05pt>
 File: capture6.png Graphic file (type png)
 <use capture6.png>
-Package pdftex.def Info: capture6.png  used on input line 27.
+Package pdftex.def Info: capture6.png  used on input line 28.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
-<capture7.png, id=103, 1445.4pt x 1084.05pt>
+<capture7.png, id=104, 1445.4pt x 1084.05pt>
 File: capture7.png Graphic file (type png)
 <use capture7.png>
-Package pdftex.def Info: capture7.png  used on input line 28.
+Package pdftex.def Info: capture7.png  used on input line 29.
 (pdftex.def)             Requested size: 232.87695pt x 174.64252pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 32.
+(hyperref)                removing `math shift' on input line 33.
 
 [2 <./capture1.png> <./capture2.png> <./capture3.png> <./capture4.png> <./captu
 re5.png> <./capture6.png> <./capture7.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 49.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 88.
+(hyperref)                removing `math shift' on input line 50.
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 112.
+(hyperref)                removing `math shift' on input line 110.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 134.
 
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 153.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 153.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 193.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 193.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 193.
+(hyperref)                removing `\gamma' on input line 174.
 
 [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 234.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ge' on input line 234.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 234.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gamma' on input line 234.
+(hyperref)                removing `\gamma' on input line 214.
 
 [6]
 
-LaTeX Warning: Reference `geometric_series' on page 7 undefined on input line 2
-86.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\ge' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 258.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gamma' on input line 258.
 
 [7] [8] (./1213_ARIMA model_5.aux)
-
-LaTeX Warning: There were undefined references.
-
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -729,13 +722,17 @@ Package rerunfilecheck Info: File `"1213_ARIMA model_5".out' has not changed.
 (rerunfilecheck)             Checksum: A3D0092A057B5F6492B0D51A3F10207B;2104.
  ) 
 Here is how much of TeX's memory you used:
- 12198 strings out of 475071
- 194777 string characters out of 5782908
- 564561 words of memory out of 5000000
- 33327 multiletter control sequences out of 15000+600000
- 491582 words of font info for 109 fonts, out of 8000000 for 9000
+ 12207 strings out of 475071
+ 194940 string characters out of 5782908
+ 563729 words of memory out of 5000000
+ 33333 multiletter control sequences out of 15000+600000
+ 492729 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,507b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,10n,77p,507b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -754,54 +751,53 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2022/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
-pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/te
-xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2022
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive
-/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb>
-<c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb><c:/te
-xlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb><c:/texlive/
-2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb><c:/texlive/2022/t
-exmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><c:/texlive/2022/texmf-d
-ist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><c:/texlive/2022/texmf-dist/fo
-nts/type1/public/nanumtype1/nanummjmb4.pfb><c:/texlive/2022/texmf-dist/fonts/ty
-pe1/public/nanumtype1/nanummjmb7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
-blic/nanumtype1/nanummjmb8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/n
-anumtype1/nanummjmb9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumty
-pe1/nanummjmba.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/na
-nummjmbc.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjm
-be.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb
-><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb><c:/t
-exlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb><c:/texlive
-/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb><c:/texlive/2022/
-texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb><c:/texlive/2022/texmf-
-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb><c:/texlive/2022/texmf-dist/f
-onts/type1/public/nanumtype1/nanummjmc8.pfb><c:/texlive/2022/texmf-dist/fonts/t
-ype1/public/nanumtype1/nanummjmc9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/p
-ublic/nanumtype1/nanummjmcc.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
-nanumtype1/nanummjmce.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumt
-ype1/nanummjmd2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/n
-anummjmd3.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummj
-md5.pfb>
-Output written on "1213_ARIMA model_5.pdf" (8 pages, 4435533 bytes).
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr6.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2022/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2022/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanum
+mjmac.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.
+pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb><c
+:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb><c:/texl
+ive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><c:/texlive/20
+22/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><c:/texlive/2022/tex
+mf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/nanumtype1/nanummjmb7.pfb><c:/texlive/2022/texmf-dist/font
+s/type1/public/nanumtype1/nanummjmb8.pfb><c:/texlive/2022/texmf-dist/fonts/type
+1/public/nanumtype1/nanummjmb9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
+ic/nanumtype1/nanummjmba.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nan
+umtype1/nanummjmbc.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype
+1/nanummjmbe.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanu
+mmjmc1.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2
+.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb><
+c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb><c:/tex
+live/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb><c:/texlive/2
+022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb><c:/texlive/2022/te
+xmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb><c:/texlive/2022/texmf-di
+st/fonts/type1/public/nanumtype1/nanummjmc9.pfb><c:/texlive/2022/texmf-dist/fon
+ts/type1/public/nanumtype1/nanummjmcc.pfb><c:/texlive/2022/texmf-dist/fonts/typ
+e1/public/nanumtype1/nanummjmce.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pub
+lic/nanumtype1/nanummjmd2.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/na
+numtype1/nanummjmd3.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtyp
+e1/nanummjmd5.pfb>
+Output written on "1213_ARIMA model_5.pdf" (8 pages, 4442456 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 324 compressed objects within 4 object streams
+ 58 named destinations out of 1000 (max. 500000)
  132 words of extra memory for PDF output out of 10000 (max. 10000000)
 

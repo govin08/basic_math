@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}Backward shift operator \(B\)}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}AR(1) model described by \(B\)}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}AR(2) model described by \(B\)}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Forward shift operator \(F\)}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}\ensuremath {\text {ARMA}}(1,1) model}{4}{section.2}%
+\contentsline {subsection}{\numberline {1.3}Forward shift operator \(F\)}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}\ensuremath {\text {ARMA}}(1,1) model}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}autocovariance for \(h=0\) : \(\gamma (0)\)}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}autocovariance for \(h=1\) : \(\gamma (1)\)}{6}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}autocovariance for \(h\ge 2\) : \(\gamma (h)\)}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}autocovariance for \(h\ge 2\) : \(\gamma (h)\)}{7}{subsection.2.3}%
 \contentsline {section}{\numberline {3}AR, MA and ARMA described by operators}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}AR model}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}MA model}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}MA model}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}ARMA model}{8}{subsection.3.3}%
