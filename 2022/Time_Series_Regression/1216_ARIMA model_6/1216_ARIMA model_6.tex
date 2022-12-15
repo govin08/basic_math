@@ -6,7 +6,7 @@
 \newcommand\ma{\ensuremath{\text{MA}}}
 \newcommand\arma{\ensuremath{\text{ARMA}}}
 \newcommand\cov{\ensuremath{\text{Cov}}}
-\newcommand\sa{\ensuremath{{\sigma_a}^2}}
+\newcommand\sa{\ensuremath{{\sigma_a}}}
 
 \begin{document}
 \title{Arima Model - 6}
@@ -16,7 +16,12 @@
 
 이것은 \href{https://youtu.be/K7GWJ3iC6OY}{ARIMA 모델 개요 - Part 6} 강의에 대한 노트이다.
 이번 내용은 계산이 많으므로, 설명을 길게 쓰는 것보다는 계산을 나열하는 것 위주로 정리했다.
-다만, conditional expectation과 prediction interval에 대해서는 조금 공부해야 할 것 같아서 앞에 적어보있다.
+다만, conditional expectation과 prediction interval에 대해서는 조금 공부해야 할 것 같아서 먼저 간략하게 적어보려고 했다.
+conditional expectation에 관해서는 적다보니 상당히 많은 양을 적게 되었고, 그래서 덕분에 확률론 전반에 대해 간략하게 복습을 한 셈이 되었다.
+prediction interval에 관해서는 wikipedia만 간략하게 읽어봤는데, 경우에 따라 prediction interval을 구하는 방법이 다른 것 같았다.
+그래서 따로 정리하진 않았다.
+나중에 시간이 나면 정리해보자.
+
 지난 번에는 영어로 적었었는데, 이번에는 다시 한글로 적었다.
 \tableofcontents
 
@@ -50,6 +55,7 @@ Conditional expectation에 관해서는 \href{https://www.math.arizona.edu/~tgk/
 
 그렇다고 확률론의 모든 내용을 적은 건 당연히 아니다.
 예를 들어 두 사건의 독립/종속에 대해서는 안적었고 전체확률의 법칙(the law of total probability)같은 것도 안 적었다.
+분산과 표준편차에 대해서도 일절 적지 않았다.
 아무튼, 적다보니, 확률론에 대해 너무 많은 걸 적게 되었다.
 그래도 이번 기회에 헷갈려했던 것들을 깔끔하게 정리하게 된 것 같다는 느낌이 든다.
 
@@ -121,7 +127,8 @@ X(6)=0\\
 그러면 표본공간은 \(\Omega=[0,6]\)이다.
 사건공간 \(\mathcal F\)에 대해 설명하는 건 좀 복잡하다.
 아까처럼 \(\mathcal F\)가 \(\Omega\)의 모든 부분집합들의 집합일 수는 없다.
-\footnote{아마 그러면 안될 것이다. 이유가 뭐였더라, 아마도 cantor set 같은게 문제가 됐던 것 같은데.}
+아마 그러면 안될 것이다. 이유가 뭐였더라, 아마도 cantor set 같은게 문제가 됐던 것 같은데.
+아, 그이유를 찾았다.\footnote{\url{https://www.cantorsparadise.com/probability-and-a-little-of-borel-sets-a9bdcd7be26c}}
 \(\mathcal F\)는 \(\Omega\)의 보렐집합(borel set)이어야 한다.
 다시 말해서 \(\Omega=[0,6]\)의 standard topology를 \(\mathcal T\)라고 할 때,
 \[\mathcal F=\bigcap\{\mathcal S\supset\mathcal T:\mathcal S\text{ is a \(\sigma\)-algebra of \(\Omega\)}\}\]
@@ -378,7 +385,307 @@ X(6)=0\\
 \(\mathbb E[X_{t+1}|X_1,X_2,\cdots,X_t]\)는 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)에 대한 함수로 나타날 것이다.
 \end{enumerate}
 
-%
+%%
 \subsection{Prediction Intervals}
+
+%%%
+\section{Prediction(Forecasting)}
+
+이번 시간에 하고 싶은 것은 \emph{예측}이다.
+구체적으로는 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)를 가지고 \(X_{t+1}\)을 예측하고 싶다.
+예측값은 \(\hat X_{t+1}\)으로 쓴다.
+이때 \(X_{t+1}-\hat X_{t+1}\)을 오차라고 할 수 있는데 (오차가 맞나? 잔차가 아닌가?)
+이 오차의 제곱에 대한 기댓값 \(\mathbb E[(X_{t+1}-\hat X_{t+1})^2]\)이 최소가 되는 \(\hat X_{t+1}\)의 값을 \(\hat X_{t+1}\)로 정한다.
+단어 두 개가 한꺼번에 쓰여서 혼동된다.
+정확하게 쓰면 다음과 같이 써야 할 것이다.
+
+하고 싶은 것은 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)가 주어져있을 때 예측값 \(\hat X_{t+1}\)을 결정하는 것이다.
+그런데 어떤 걸 예측값으로 할 지는 아직 정하지 않았으므로, 예측값의 후보를 \(\tilde X_{t+1}\)이라고 적자.
+(hat 대신 tilde를 썼다.)
+여러 예측값들의 후보인 \(\tilde X_{t+1}\) 중에서 가장 괜찮은 것을 \emph{예측값} \(X_{t+1}\)이라고 부를 것이다.
+그러면 가장 괜찮은 예측값이라는 것은 무엇인가? 오차가 가장 적은 예측값을 말한다.
+오차란 \(X_{t+1}-\tilde X_{t+1}\)를 뜻한다.
+오차가 가장 작은 것보다는 오차의 제곱이 가장 작은 때가 좋겠다.
+그런데 오차의 제곱인 \(\left(X_{t+1}-\tilde X_{t+1}\right)^2\)은 확률변수로서 이해되어야 한다.
+어떤 확률변수가 최소가 되는 상황을 고려하는 것보다는, 그 확률변수의 평균이 최소가 되는 상황을 고려하는 것이 더 말이 된다.
+그래서 최적의 예측값 \(\hat X_{t+1}\)을
+\[\mathbb E\left[(X_{t+1}-\tilde X_{t+1})^2\right]\]
+이 최소가 되는 \(\tilde X_{t+1}\)의 값으로 정하는 것이다.
+조금 더 정확하게는
+\[\mathbb E\left[(X_{t+1}-\tilde X_{t+1})^2|X_1,X_2,\cdots,X_t\right]\]
+가 최소가 되는 \(\tilde X_{t+1}\)의 값이다.
+기호로 한 번에 쓰면
+\begin{equation}\label{argmin_X1}
+\hat X_{t+1}=\text{arg}\min_{\tilde X_{t+1}}\mathbb E\left[(X_{t+1}-\tilde X_{t+1})^2|X_1,X_2,\cdots,X_t\right]
+\end{equation}
+이 될 것이다.
+그리고 이 문제 \eqref{argmin_X1}에 대한 답은
+\begin{equation}\label{argmin_X2}
+\hat X_{t+1}=\mathbb E[X_{t+1}|X_1,X_2,\cdots,X_t]
+\end{equation}
+이 된다고 한다.
+
+교수님이 이에 대한 유도과정을 생략한다고 했는데, \eqref{argmin_X1}에 대한 답이 \eqref{argmin_X2}처럼 나온다는 것은, 분산과 평균의 관점에서 보면 당연하다.
+확률변수 \(X\)에 대한 평균을 \(m\)이라고 해보자 (\(\mathbb E[X]=m\)).
+이때, \(m\)은 실수 \(n\)에 대한 함수
+\begin{equation}\label{pre-variance}
+\mathbb E[(X-n)^2]
+\end{equation}
+이 최소가 되는 \(n\)의 값이라고 생각할 수있다.
+아까 argmin를 사용해 표현한 방식으로 쓰면
+\begin{equation}\label{argmin_m1}
+m=\text{arg}\max_{n}\mathbb E[(X-n)^2]
+\end{equation}
+라고 쓸 수 있다.
+왜냐하면 \eqref{pre-variance}을 전개하여
+\begin{align*}
+\mathbb E[(X-n)^2]
+&=n^2-2\mathbb E[X]+\mathbb E[X^2]\\
+&=\left(n-\mathbb E[X]\right)^2+\mathbb E[X]^2-\mathbb E[X^2]
+\end{align*}
+으로 쓸 수 있기 때문이다.
+중학교 3학년때 배우는 식으로 해석하면 위의 (\(n\)에 대한) 이차함수는 \(n=\mathbb E[X]\)일 때, 최솟값 \(\mathbb E[X]^2-\mathbb E[X^2]\)을 가진다.
+그리고 이 최솟값은 정확히 분산인 \(\mathbb V(X)\)와 같다.
+즉
+\begin{equation}\label{argmin_m2}
+m=\mathbb E[X]
+\end{equation}
+이다.
+\eqref{argmin_X1}, \eqref{argmin_X2}의 관계는 \eqref{argmin_m1}, \eqref{argmin_m2}의 관계와 거의 같다.
+차이는 조건부가 붙느냐 붙지 않았느냐의 차이밖에는 없는 것이다.
+
+%%
+\subsection{\ar(1) model}
+이번에는 \ar(1) 모델에 대하여 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)가 주어졌을 때, \(X_{t+1}\)과 \(X_{t+2}\)를 예측해보려고 한다.
+
+이번 강의의 내용은 계산이 워낙 많아서, 설명은 최대한 배제하고 계산만 적어보려고 했었다.
+그런데, 그래도 처음 계산에 대해서는 설명을 좀 적어야 할 것 같다.
+
+\ar(1) 모델은 원래
+\begin{equation}\label{ar1_equation0}
+X_t=\phi X_{t-1}+a_t
+\end{equation}
+라는 식이었다.
+하지만 이번에는
+\begin{equation}\label{ar1_equation1}
+X_t=\phi X_{t-1}+a_t+\mu
+\end{equation}
+로 적고 있다.
+새로 적혀 있는 이 \(\mu\)에 대해서 교수님은 `constant term'이라고만 말씀하고 계시다.
+이에 관한 내 생각은 다음과 같다.
+\eqref{ar1_equation0}에서는 \(X_t\)의 평균이 0임을 가정했었다.
+그런데, 평균이 0이 아니고 \(\mu_X\)인 상황을 생각하면
+\eqref{ar1_equation0}은
+\[X_t-\mu_X=\phi(X_{t-1}-\mu_X)+a_t\]
+와 같이 쓰게 된다.
+이 식을 정리한 것이 \eqref{ar1_equation1}이다.
+다시 말해서, \(\mu=(1-\phi)\mu_X\)이다.
+따라서 \(\mu\)는 \(t\)에는 의존하지 않는 값이다.
+(그런 의미에서 constant term이다.)
+이것은 Shumway의 책에서 (3.1), (3.2)의 식에 해당된다.
+
+%
+\subsubsection{Prediction on \(X_{t+1}\)}
+식 \eqref{ar1_equation1}의 \(t\) 대신 \(t+1\)을 대입하여
+\begin{equation}\label{ar1_equation2}
+X_{t+1}=\phi X_t+a_{t+1}+\mu
+\end{equation}
+을 만들고 여기에 \(\mathbb E[\cdot|X_1,X_2,\cdots,X_t]\)를 취하여 \eqref{argmin_X2}를 대입하면 \(X_{t+1}\)에 대한 point estimate(점 예측값)인 \(\hat X_{t+1}\)을 얻을 수 있다 ;
+\begin{equation}\label{ar1_equation3}
+\begin{aligned}
+\hat X_{t+1}
+&=\mathbb E\left[X_{t+1}|X_1,X_2,\cdots,X_t\right]\\
+&=\mathbb E\left[\phi X_t+a_{t+1}+\mu|X_1,X_2,\cdots,X_t\right]\\
+&=\phi\left[X_t|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[a_{t+1}|X_1,X_2,\cdots,X_t\right]+
+\mathbb E\left[\mu|X_1,X_2,\cdots,X_t\right]\\
+&=\phi X_t+0+\mu\\
+&=\phi X_t+\mu
+\end{aligned}
+\end{equation}
+
+이번에는 \(\mathbb V[\hat X_{t+1}]\)을 구해야 한다.
+\(X_{t+1}\)의 prediction interval(예측 구간)을 구하기 위함이다.
+이를 위해서
+\[\mathbb V[X_{t+1}]=\mathbb V[\hat \hat X_{t+1}-X_{t+1}]\]
+임을 사용한다.
+다시 말해서, \(X_{t+1}\)는 \(\hat X_{t+1}\)의 관점에서 보면 상수라는 것을 가정하고 있다.
+그건 맞는 말인 것 같다.
+\(X_{t+1}\)의 범위를 추정하는 게 지금 하려는 것이기는 하지만, \(X_{t+1}\)은 고정된 값이라고 가정할 수 있는 것이다.
+물론, \(X_{t+1}\)은 그 자체로 하나의 확률변수이기는 하지만, \(\hat X_{t+1}\)을 추정하는 데 있어서는 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)를 가지고 추정하는 것이지 \(X_{t+1}\)을 가지고 추정하지는 않는다.
+그런 의미에서 \(X_{t+1}\)은 \(\hat X_{t+1}\)의 관점에서 상수이다.
+
+\eqref{ar1_equation2}와 \eqref{ar1_equation3}을 빼서
+\[X_{t+1}-\hat X_{t+1}=a_{t+1}\]
+을 얻고 여기에 \(\mathbb V[\cdot]\)를 취하면
+\[\mathbb V[\hat X_{t+1}]=\mathbb V[X_{t+1}-\hat X_{t+1}]=\mathbb V[a_{t+1}]=\sa^2\]
+가 된다.
+
+\(X_{t+1}\)에 대한 \((1-\alpha)\cdot100\%\) prediction interval은
+\[\left[\hat X_{t+1}-z_{(1-\frac\alpha2)}\cdot\sqrt{\mathbb V[\hat X_{t+1}]},
+\hat X_{t+1}+z_{(1-\frac\alpha2)}\cdot\sqrt{\mathbb V[\hat X_{t+1}]}\right]\]
+로 주어진다는 것 같다.
+근데 이게 너무 기니까 간단히
+\[\hat X_{t+1}\pm z_{(1-\frac\alpha2)}\cdot\sqrt{\mathbb V[\hat X_{t+1}]}\]
+으로 표시한다는 것 같다.
+이때, \(z_{(1-\frac\alpha2)}\)는 \(\alpha\)에 대한 critical value를 의미한다고 한다.
+따라서, \(X_{t+1}\)에 대한 prediction interval은
+\begin{equation}\label{ar1_equation4}
+\hat X_{t+1}\pm z_{(1-\frac\alpha2)}\sa
+\end{equation}
+이 된다.
+한번에 정리하면
+\begin{align*}
+\text{point estimate}		&:\hat X_{t+1} = \phi X_t+\mu\\
+\text{prediction interval}	&:\hat X_{t+1}\pm z_{(1-\frac\alpha2)}\sa
+\end{align*}
+이 된다.
+
+%
+\subsubsection{Prediction on \(X_{t+2}\)}
+식 \eqref{ar1_equation1}의 \(t\) 대신 \(t+2\)을 대입하고 똑같은 과정을 거치면
+(여기서부터는 설명은 거의 적지 않고 계산식으로만 적겠다.)
+\begin{gather*}
+X_{t+2}=\phi X_{t+1}+a_{t+2}+\mu\\
+\begin{aligned}
+\hat X_{t+2}
+&=\mathbb E[X_{t+2}|X_1,X_2,\cdots,X_t]\\
+&=\mathbb E[\phi X_{t+1}+a_{t+2}+\mu|X_1,X_2,\cdots,X_t]\\
+&=\phi\mathbb E[X_{t+1}|X_1,X_2,\cdots,X_t]+\mu\\
+&=\phi\hat X_{t+1}+\mu\\
+&=\phi^2X_t+\phi\mu+\mu\\
+\end{aligned}\\
+X_{t+2}-\hat X_{t+2}=\phi\left(X_{t+1}-\hat X_{t+1}\right)+a_{t+2}\\
+\begin{aligned}
+\mathbb V[\hat X_{t+2}]
+&=\mathbb V[X_{t+2}-\hat X_{t+2}]\\
+&=\mathbb V[\phi\left(X_{t+1}-\hat X_{t+1}\right)+a_{t+2}]\\
+&\stackrel{(*)}=\phi^2\mathbb V\left[X_{t+1}-\hat X_{t+1}\right]+\mathbb V[a_{t+2}]\\
+&=(\phi^2+1)\sa^2
+\end{aligned}
+\end{gather*}
+이다.
+확률변수 \(X\), \(Y\)에 대해서 일반적으로 \(\mathbb V[X+Y]=\mathbb V[X]+\mathbb V[Y]\)는 성립하지 않는 식이다.
+하지만 \(X\)와 \(Y\)가 서로 독립이면 이 식은 성립한다.\footnotemark
+위의 식에서도  \(X_{t+1}-\hat X_{t+1}\)과 \(a_{t+2}\)가 서로 독립이기 때문에 \((*)\)가 성립한다.
+\(X\)와 \(Y\)가 서로 독립이면
+\begin{align*}
+\mathbb V[X+Y]
+&=\mathbb E\left[(X+Y-\mu_X-\mu_Y)^2\right]\\
+&=\mathbb E\left[(X-\mu_X)^2+(Y-\mu_Y)^2+2(X-\mu_X)(Y-\mu_Y)\right]\\
+&=\mathbb V(X)+\mathbb V(Y)+\cov(X,Y)\\
+&=\mathbb V(X)+\mathbb V(Y)
+\end{align*}
+이 되는 것이다.
+따라서
+\begin{align*}
+\text{point estimate}		&:\hat X_{t+2} = \phi^2 X_t+(\phi+1)\mu\\
+\text{prediction interval}	&:\hat X_{t+2}\pm z_{(1-\frac\alpha2)}\sqrt{\phi^2+1}\sa
+\end{align*}
+이 된다.
+\(X_{t+2}\)에 대한 prediction interval은 \(X_{t+1}\)에 대한 prediction interval에 비해서는 조금 더 넓어졌다.
+
+%
+\subsubsection{Prediction on \(X_{t+3}\)}
+강의에서는 설명되지 않았지만 \(X_{t+3}\)에 대해서도 해보자,
+\begin{gather*}
+X_{t+3}=\phi X_{t+2}+a_{t+3}+\mu\\
+\begin{aligned}
+\hat X_{t+3}
+&=\mathbb E[X_{t+3}|X_1,X_2,\cdots,X_t]\\
+&=\mathbb E[\phi X_{t+2}+a_{t+3}+\mu|X_1,X_2,\cdots,X_t]\\
+&=\phi\mathbb E[X_{t+2}|X_1,X_2,\cdots,X_t]+\mu\\
+&=\phi\hat X_{t+2}+\mu
+\end{aligned}\\
+X_{t+3}-\hat X_{t+3}=\phi\left(X_{t+2}-\hat X_{t+2}\right)+a_{t+3}\\
+\begin{aligned}
+\mathbb V[\hat X_{t+3}]
+&=\mathbb V[X_{t+3}-\hat X_{t+3}]\\
+&=\mathbb V[\phi\left(X_{t+2}-\hat X_{t+2}\right)+a_{t+3}]\\
+&=\phi^2\mathbb V\left[X_{t+2}-\hat X_{t+2}\right]+\mathbb V[a_{t+3}]\\
+&=\phi^2(\phi^2+1)\sa^2+\sa^2\\
+&=(\phi^4+\phi^2+1)\sa^2
+\end{aligned}
+\end{gather*}
+따라서
+\begin{align*}
+\text{point estimate}		&:\hat X_{t+3} = \phi^3 X_t+(\phi^2+\phi+1)\mu\\
+\text{prediction interval}	&:\hat X_{t+3}\pm z_{(1-\frac\alpha2)}\sqrt{\phi^4+\phi^2+1}\sa
+\end{align*}
+이 된다.
+
+
+%%
+\subsection{\ar(2) model}
+이번에는 \ar(2) 모델에 대하여 \(X_1\), \(X_2\), \(\cdots\), \(X_t\)가 주어졌을 때, \(X_{t+1}\)과 \(X_{t+2}\)를 예측해보려고 한다.
+
+\ar(2) 모델도 \eqref{ar1_equation1}에서와 마찬가지로 \(\mu\)를 추가하여
+\begin{equation}\label{ar2_equation1}
+X_t=\phi_1X_{t-1}+\phi_2X_{t-2}+a_t+\mu
+\end{equation}
+로 쓸 수 있다.
+
+%
+\subsubsection{Prediction on \(X_{t+1}\)}
+식 \eqref{ar2_equation1}의 \(t\) 대신 \(t+1\)을 대입하여
+\begin{equation}\label{ar2_equation2}
+X_{t+1}=\phi_1X_t+\phi_2X_{t-1}+a_{t+1}+\mu
+\end{equation}
+을 만들고 여기에 \(\mathbb E[\cdot|X_1,X_2,\cdots,X_t]\)를 취하여 \eqref{argmin_X2}를 대입하면 \(X_{t+1}\)에 대한 point estimate(점 예측값)인 \(\hat X_{t+1}\)을 얻을 수 있다 ;
+\begin{equation}\label{ar2_equation3}
+\begin{aligned}
+\hat X_{t+1}
+&=\mathbb E\left[X_{t+1}|X_1,X_2,\cdots,X_t\right]\\
+&=\mathbb E\left[\phi_1X_t+\phi_2X_{t-1}+a_{t+1}+\mu|X_1,X_2,\cdots,X_t\right]\\
+&=\phi_1\left[X_t|X_1,X_2,\cdots,X_t\right]+\phi_2\left[X_{t-1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[a_{t+1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[\mu|X_1,X_2,\cdots,X_t\right]\\
+&=\phi_1 X_t+\phi_2 X_{t-1}+\mu
+\end{aligned}
+\end{equation}
+
+마찬가지로
+\eqref{ar2_equation2}와 \eqref{ar2_equation3}을 빼면
+\(X_{t+1}-\hat X_{t+1}=a_{t+1}\)
+이고, 따라서
+\[\mathbb V[\hat X_{t+1}]=\mathbb V[X_{t+1}-\hat X_{t+1}]=\mathbb V[a_{t+1}]=\sa^2\]
+이다.
+따라서
+\begin{align*}
+\text{point estimate}		&:\hat X_{t+1} = \phi_1X_t+\phi_2X_{t-1}+\mu\\
+\text{prediction interval}	&:\hat X_{t+1}\pm z_{(1-\frac\alpha2)}\sa
+\end{align*}
+이 된다.
+
+%
+\subsubsection{Prediction on \(X_{t+2}\)}
+이 부분은 강의에는 생략되었던 부분이다.
+\begin{gather*}
+X_{t+2}=\phi_1 X_{t+1}+\phi_2X_t+a_{t+2}+\mu\\
+\begin{aligned}
+\hat X_{t+2}
+&=\mathbb E[X_{t+2}|X_1,X_2,\cdots,X_t]\\
+&=\mathbb E[\phi_1 X_{t+1}+\phi_2X_t+a_{t+2}+\mu|X_1,X_2,\cdots,X_t]\\
+&=\phi_1\mathbb E[X_{t+1}|X_1,X_2,\cdots,X_t]+\phi_2\mathbb E[X_t|X_1,X_2,\cdots,X_t]+\mu\\
+&=\phi_1\hat X_{t+1}+\phi_2X_t+\mu\\
+&={\phi_1}^2X_t+\phi_1\phi_2X_{t-1}+(\phi_2+1)\mu\\
+\end{aligned}\\
+X_{t+2}-\hat X_{t+2}=\phi_1\left(X_{t+1}-\hat X_{t+1}\right)+a_{t+2}\\
+\begin{aligned}
+\mathbb V[\hat X_{t+2}]
+&=\mathbb V[X_{t+2}-\hat X_{t+2}]\\
+&=\mathbb V[\phi_1\left(X_{t+1}-\hat X_{t+1}\right)+a_{t+2}]\\
+&={\phi_1}^2\mathbb V\left[X_{t+1}-\hat X_{t+1}\right]+\mathbb V[a_{t+2}]\\
+&=({\phi_1}^2+1)\sa^2
+\end{aligned}
+\end{gather*}
+이다.
+따라서
+\begin{align*}
+\text{point estimate}		&:\hat X_{t+2} = {\phi_1}^2X_t+\phi_1\phi_2X_{t-1}+(\phi_2+1)\mu\\
+\text{prediction interval}	&:\hat X_{t+2}\pm z_{(1-\frac\alpha2)}\sqrt{{\phi_1}^2+1}\sa
+\end{align*}
+이 된다.
+
+
+\[\Phi, \phi, \Psi, \psi, \pi, \Pi, \sigma, \Sigma\]
+
 
 \end{document}
