@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  15 DEC 2022 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.4)  16 DEC 2022 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,7 +687,7 @@ Package pdftex.def Info: capture_12.png  used on input line 41.
  <./capture_05.png> <./capture_06.png> <./capture_07.png> <./capture_08.png>] [
 3 <./capture_09.png> <./capture_10.png> <./capture_11.png> <./capture_12.png>] 
 [4] [5] [6]
-Overfull \hbox (36.04465pt too wide) in paragraph at lines 224--232
+Overfull \hbox (36.04465pt too wide) in paragraph at lines 225--233
 \LUC/nanummj/m/n/10/c7 D \LUC/nanummj/m/n/10/c0 Ý\LUC/nanummj/m/n/10/ac ^^A\LUC
 /nanummj/m/n/10/d5 X\LUC/nanummj/m/n/10/ac Œ \LUC/nanummj/m/n/10/b4 ^^\\LUC/nan
 ummj/m/n/10/b2 ä\OT1/cmr/m/n/10 .[][][] \LUC/nanummj/m/n/10/c7 t\LUC/nanummj/m/
@@ -709,61 +709,61 @@ J\LUC/nanummj/m/n/10/ac  \LUC/nanummj/m/n/10/b2 ä\OT1/cmr/m/n/10 . \LUC/nanummj
 [7] [8] [9]
 LaTeX Font Info:    Font shape `LUC/nanummj/m/it' in size <10> not available
 (Font)              Font shape `LUC/nanummj/m/sl' tried instead on input line 3
-94.
+95.
  [10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 488.
+(hyperref)                removing `math shift' on input line 489.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 488.
+(hyperref)                removing `subscript' on input line 489.
 
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 544.
+(hyperref)                removing `math shift' on input line 545.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 544.
+(hyperref)                removing `subscript' on input line 545.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 588.
+(hyperref)                removing `math shift' on input line 589.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 588.
+(hyperref)                removing `subscript' on input line 589.
 
 [13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 628.
+(hyperref)                removing `math shift' on input line 629.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 628.
+(hyperref)                removing `subscript' on input line 629.
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 658.
+(hyperref)                removing `math shift' on input line 659.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 658.
+(hyperref)                removing `subscript' on input line 659.
 
 [15] (./1216_ARIMA model_6.aux)
 Package rerunfilecheck Info: File `"1216_ARIMA model_6".out' has not changed.
 (rerunfilecheck)             Checksum: E082D273A8A66757F030FEE12A055BAF;2986.
  ) 
 Here is how much of TeX's memory you used:
- 12354 strings out of 475071
- 198194 string characters out of 5782908
+ 12357 strings out of 475071
+ 198254 string characters out of 5782908
  565747 words of memory out of 5000000
- 33448 multiletter control sequences out of 15000+600000
- 505125 words of font info for 157 fonts, out of 8000000 for 9000
+ 33451 multiletter control sequences out of 15000+600000
+ 506003 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,16n,77p,507b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -845,7 +845,7 @@ ummjmd4.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd
 5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
 <c:/texlive/2022/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb><c:/te
 xlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "1216_ARIMA model_6.pdf" (15 pages, 8298968 bytes).
+Output written on "1216_ARIMA model_6.pdf" (15 pages, 8302386 bytes).
 PDF statistics:
  581 PDF objects out of 1000 (max. 8388607)
  400 compressed objects within 4 object streams
