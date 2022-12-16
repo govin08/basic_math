@@ -116,7 +116,7 @@ X(5)=1\\
 X(6)=0\\
 \end{cases}\]
 로 정의된다.
-\(X\)의 역은 \(\{0,1\}\)이므로 \(X\)는 이산확률변수이고, 확률질량함수는
+\(X\)의 치역은 \(\{0,1\}\)이므로 \(X\)는 이산확률변수이고, 확률질량함수는
 \[\begin{cases}
 \mathbb P(X=0)=\frac12\\
 \mathbb P(X=1)=\frac12
@@ -265,8 +265,8 @@ X(6)=0\\
 이번에는 조건부 기댓값(conditional expectation) \(\mathbb E[X|Y=y]\)를 다음과 같이 정의한다.
 \begin{align*}
 \mathbb E[X|Y=y]
-&=\sum_x\mathbb P(X=x|Y=y)\\
-&=\sum_x\frac{\mathbb P(X=x, Y=y)}{\mathbb P(Y=y)}
+&=\sum_xx\mathbb P(X=x|Y=y)\\
+&=\sum_xx\frac{\mathbb P(X=x, Y=y)}{\mathbb P(Y=y)}
 \end{align*}
 
 예를 들어보자.
@@ -351,7 +351,7 @@ X(6)=0\\
 여전히 복잡해보인다.
 하지만, 아까 언급한 예를 통해서 보면 좀 이해가 갈지도 모른다.
 
-\(\mathbb E[X|Y]\)는 \(\omega\)를 \(\mathbb E[X|Y=y\)로 대응시킨다. (\(y=Y(\omega)\))
+\(\mathbb E[X|Y]\)는 \(\omega\)를 \(\mathbb E[X|Y=y]\)로 대응시킨다. (\(y=Y(\omega)\))
 그런데 그 값은 \(\frac15(y-1)\)이라고 계산되었었으니까,
 \[\mathbb E[X|Y](\omega)=\frac15\left(Y(\omega)-1\right)\]
 라고 쓸 수 있다.
@@ -435,7 +435,7 @@ X(6)=0\\
 이 최소가 되는 \(n\)의 값이라고 생각할 수있다.
 아까 argmin를 사용해 표현한 방식으로 쓰면
 \begin{equation}\label{argmin_m1}
-m=\text{arg}\max_{n}\mathbb E[(X-n)^2]
+m=\text{arg}\min_{n}\mathbb E[(X-n)^2]
 \end{equation}
 라고 쓸 수 있다.
 왜냐하면 \eqref{pre-variance}을 전개하여
@@ -637,7 +637,7 @@ X_{t+1}=\phi_1X_t+\phi_2X_{t-1}+a_{t+1}+\mu
 \hat X_{t+1}
 &=\mathbb E\left[X_{t+1}|X_1,X_2,\cdots,X_t\right]\\
 &=\mathbb E\left[\phi_1X_t+\phi_2X_{t-1}+a_{t+1}+\mu|X_1,X_2,\cdots,X_t\right]\\
-&=\phi_1\left[X_t|X_1,X_2,\cdots,X_t\right]+\phi_2\left[X_{t-1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[a_{t+1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[\mu|X_1,X_2,\cdots,X_t\right]\\
+&=\phi_1\mathbb E\left[X_t|X_1,X_2,\cdots,X_t\right]+\phi_2\mathbb E\left[X_{t-1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[a_{t+1}|X_1,X_2,\cdots,X_t\right]+\mathbb E\left[\mu|X_1,X_2,\cdots,X_t\right]\\
 &=\phi_1 X_t+\phi_2 X_{t-1}+\mu
 \end{aligned}
 \end{equation}
