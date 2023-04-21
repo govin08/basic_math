@@ -1,0 +1,75 @@
+\documentclass{book}
+\usepackage{geometry, graphicx, kotex, imakeidx, titlesec, array}
+\usepackage{amsmath, amsthm, amssymb, mathrsfs}
+
+\geometry{paper=b5paper, left=20mm, right=20mm, top=20mm, bottom=20mm}
+
+\titleformat{\chapter}{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter.}{20pt}{\huge} % 장 스타일 설정
+\newtheorem{theorem}{Theorem} % theorem 환경
+\newtheorem{definition}{Definition} % definition 환경
+
+\makeindex % 색인 만들기
+
+\linespread{1.25} % 줄간격 설정
+\renewcommand\arraystretch{1.3} % 표 세로간격 설정
+
+\begin{document}
+\pagenumbering{gobble}
+
+\title{선형대수}
+\author{}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\renewcommand*\contentsname{목차}
+\tableofcontents
+
+%%%
+\chapter*{들어가며}
+
+%%%
+\chapter{벡터와 스칼라}
+
+%%%
+\chapter{2차원 평면}
+
+%%%
+\chapter{3차원 공간}
+
+%%%
+\chapter{유클리드 공간}
+
+%%%
+\chapter{행렬}
+
+%%%
+\chapter{일차연립방정식}
+
+%%%
+\chapter{일차변환}
+
+%%%
+\chapter{행렬식}
+
+\newpage
+\renewcommand\bibname{참고문헌}
+\addcontentsline{toc}{chapter}{참고문헌}
+\begin{thebibliography}{AA}
+\bibitem {LSTM} Hochreiter, Sepp, and Jürgen Schmidhuber. ``Long short-term memory.'' Neural computation 9.8 (1997): 1735-1780.
+\bibitem {pure} Hardy, Godfrey Harold. Course of pure mathematics. Courier Dover Publications, 2018.
+\end{thebibliography}
+
+\bigskip
+
+
+\renewcommand{\indexname}{색인}
+\addcontentsline{toc}{chapter}{색인}
+\printindex
+\bigskip
+
+필요한 경우 색인(index)을 작성한다.
+
+
+\end{document}
+
