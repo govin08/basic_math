@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}라그랑지 승수법 (두 개의 제약조건)}{2}{}%
+\contentsline {section}{\numberline {2}설명}{2}{}%
